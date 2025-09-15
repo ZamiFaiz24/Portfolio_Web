@@ -17,7 +17,7 @@ export default function About(props: AboutProps) {
           <div className="relative group mb-4">
             <div className="p-1 bg-gradient-to-tr from-blue-500 to-cyan-500 rounded-xl">
               <img
-                src="/public/images/Profil01.jpg"
+                src="/images/Profil01.jpg"
                 alt="Faiz Zamzami"
                 className="w-44 h-44 object-cover rounded-xl shadow-lg 
                           transition-transform duration-300 group-hover:scale-105 object-[0_20%]"
@@ -39,7 +39,7 @@ export default function About(props: AboutProps) {
 
           {/* Download CV Button */}
           <a
-            href="/public/files/Faiz_CV.pdf"
+            href="/files/Faiz_CV.pdf"
             download
             className="mt-6 inline-flex items-center gap-2 px-6 py-2 rounded-lg 
                       bg-gradient-to-r from-blue-500 to-cyan-500 !text-white
