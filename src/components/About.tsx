@@ -17,7 +17,7 @@ export default function About(props: AboutProps) {
           <div className="relative group mb-4">
             <div className="p-1 bg-gradient-to-tr from-blue-500 to-cyan-500 rounded-xl">
               <img
-                src="/src/images/Profil01.JPG"
+                src="/public/images/Profil01.jpg"
                 alt="Faiz Zamzami"
                 className="w-44 h-44 object-cover rounded-xl shadow-lg 
                           transition-transform duration-300 group-hover:scale-105 object-[0_20%]"
