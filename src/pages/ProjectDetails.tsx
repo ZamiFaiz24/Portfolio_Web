@@ -13,9 +13,9 @@ const projectDetails = [
     title: "Cattle Expert System",
     subinfo: "Academic Project · Web App",
     screenshots: [
-      "/src/images/potrfolio02.png",
-      "/src/images/porto-sapi-1.png",
-      "/src/images/porto-sapi-2.png",
+      "/images/potrfolio02.png",
+      "/images/porto-sapi-1.png",
+      "/images/porto-sapi-2.png",
     ],
     description: `
 A web-based expert system designed to assist farmers in diagnosing cattle 

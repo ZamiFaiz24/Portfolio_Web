@@ -19,7 +19,7 @@ export default function Hero() {
         playsInline
         className="absolute inset-0 w-full h-full  object-cover"
       >
-        <source src="/src/videos/BG.mp4" type="video/mp4" />
+        <source src="/videos/BG.mp4" type="video/mp4" />
         Browser kamu tidak mendukung video.
       </video>
 

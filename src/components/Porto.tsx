@@ -8,19 +8,19 @@ const projects = [
     id: "sistem-pakar-sapi",
     title: "Cattle Expert System",
     desc: "A web application for diagnosing cattle diseases using Laravel.",
-    img: "/src/images/potrfolio02.png",
+    img: "/images/potrfolio02.png",
   },
   {
     id: "todo-list-laravel",
     title: "Todo List Laravel",
     desc: "A simple task management app built with Laravel.",
-    img: "/src/images/Portfolio01.png",
+    img: "/images/Portfolio01.png",
   },
   {
     id: "iot-dummy-api",
     title: "IoT Dummy API",
     desc: "A REST API for simulating IoT devices.",
-    img: "/src/images/porto-iot.png",
+    img: "/images/porto-iot.png",
   },
 ];
 
