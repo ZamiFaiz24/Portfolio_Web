@@ -1,8 +1,9 @@
-import React from "react";
-import { FaCogs, FaCheckCircle, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { useParams, Link, useNavigate  } from "react-router-dom";
+import React, { useEffect } from "react";
+import { FaCogs, FaCheckCircle, FaGithub, FaExternalLinkAlt, FaArrowLeft } from "react-icons/fa";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import PageLayout from "../components/PageLayout";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -35,8 +36,10 @@ diseases quickly and accurately using the Certainty Factor method.`,
     title: "Todo List App (Laravel)",
     subinfo: "Personal Project · Productivity Tool",
     screenshots: [
-      "/src/images/Portfolio01.png",
-      "/src/images/porto-todo-1.png",
+      "/images/My_ToDo/Poster Web.png",
+      "/images/My_ToDo/SS01.png",
+      "/images/My_ToDo/SS02.png"
+
     ],
     description: `
 A simple task management application built with Laravel, designed to help 
@@ -71,147 +74,167 @@ A RESTful API created for simulating IoT device behavior.`,
 export default function ProjectDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
-
   const project = projectDetails.find((p) => p.id === id);
+
+  // Scroll ke atas halaman saat komponen dimuat
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!project) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-gray-500">Project not found.</p>
-      </div>
+      <PageLayout>
+        <div className="min-h-screen flex items-center justify-center text-center px-6">
+          <div>
+            <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">Project Not Found</h2>
+            <p className="text-gray-500 dark:text-gray-400 mt-2">The project you are looking for does not exist.</p>
+            <Link to="/" className="mt-6 inline-block px-6 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700">
+              Back to Home
+            </Link>
+          </div>
+        </div>
+      </PageLayout>
     );
   }
-
+  
+  // Fungsi kembali ke halaman utama dan scroll ke section projects
   const handleBack = () => {
-  navigate("/"); // balik ke home
-  setTimeout(() => {
-    const section = document.getElementById("projects");
-    section?.scrollIntoView({ behavior: "smooth" });
-  }, 100);
-};
+    navigate("/");
+    setTimeout(() => {
+      document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
 
   return (
-    <section className="w-full bg-gradient-to-br from-white via-blue-50 to-blue-100 py-16 px-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
-        {/* Left - Deskripsi */}
-        <div>
-          <h1 className="text-3xl md:text-4xl font-extrabold text-blue-700 mb-2 border-b-4 border-cyan-400 inline-block pb-1">
-            {project.title}
-          </h1>
-          {/* Subinfo */}
-          <p className="text-gray-500 text-sm mb-6">{project.subinfo}</p>
-
-          {/* Description */}
-          <p className="bg-white/80 p-6 rounded-xl shadow leading-relaxed whitespace-pre-line text-gray-700 mb-6">
-            {project.description}
-          </p>
-
-          {/* Features */}
-          {project.features && (
-            <div className="mb-6">
-              <h3 className="text-lg font-bold text-blue-600 mb-3">Key Features</h3>
-              <ul className="space-y-2">
-                {project.features.map((f, i) => (
-                  <li key={i} className="flex items-center gap-2 text-gray-700">
-                    <FaCheckCircle className="text-cyan-500" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* Technologies */}
-          <div className="mb-6">
-            <h3 className="text-lg font-bold text-blue-600 mb-3 flex items-center gap-2">
-              <FaCogs className="text-blue-500 text-xl" />
-              Technologies Used
-            </h3>
-            <div className="flex gap-2 flex-wrap">
-              {project.tech.map((t, i) => (
-                <span
-                  key={i}
-                  className="px-3 py-1.5 bg-gradient-to-r from-blue-100 to-cyan-100 
-                             text-blue-700 font-medium rounded-full text-sm shadow 
-                             border border-blue-200"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Action Links */}
-          <div className="flex gap-4 mb-6">
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white text-sm hover:bg-gray-900 transition shadow"
-              >
-                <FaGithub /> GitHub
-              </a>
-            )}
-            {project.demo && (
-              <a
-                href={project.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-green-500 text-white text-sm hover:bg-green-600 transition shadow"
-              >
-                <FaExternalLinkAlt /> Live Demo
-              </a>
-            )}
-          </div>
-
+    // 1. Bungkus semua dengan PageLayout
+    <PageLayout>
+      {/* 2. Latar belakang section diubah untuk dark mode */}
+      <section className="w-full bg-gradient-to-br from-white via-blue-50 to-blue-100 dark:from-gray-900 dark:via-black dark:to-gray-900 pt-24 pb-16 px-6 transition-colors duration-500">
+        <div className="max-w-6xl mx-auto">
+          {/* Tombol Back di atas */}
           <button
             onClick={handleBack}
-            className="px-6 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 text-white"
+            className="flex items-center gap-2 mb-8 text-blue-600 dark:text-cyan-400 font-semibold hover:underline"
           >
-            ← Back to Projects
+            <FaArrowLeft />
+            Back to All Projects
           </button>
-        </div>
 
-        {/* Right - Carousel */}
-        <div className="rounded-2xl overflow-hidden shadow-xl">
-          <Swiper
-            modules={[Navigation, Pagination]}
-            navigation
-            pagination={{ clickable: true }}
-            spaceBetween={20}
-            slidesPerView={1}
-            className="rounded-xl"
-          >
-            {project.screenshots.map((src, i) => (
-              <SwiperSlide key={i}>
-                <img
-                  src={src}
-                  alt={`${project.title} screenshot ${i + 1}`}
-                  className="w-full h-[280px] md:h-[380px] object-cover rounded-xl"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </div>
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* Kiri - Carousel */}
+            <div className="rounded-2xl overflow-hidden shadow-2xl sticky top-24">
+              <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                navigation
+                pagination={{ clickable: true }}
+                loop={true}
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                className="project-swiper"
+              >
+                {project.screenshots.map((src, i) => (
+                  <SwiperSlide key={i}>
+                    <img
+                      src={src}
+                      alt={`${project.title} screenshot ${i + 1}`}
+                      className="w-full h-auto aspect-video object-cover"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
 
-      {/* Custom style untuk arrow Swiper */}
+            {/* Kanan - Deskripsi */}
+            <div>
+              {/* 3. Semua warna teks diubah untuk dark mode */}
+              <h1 className="text-3xl md:text-4xl font-extrabold text-blue-700 dark:text-cyan-400 mb-2">
+                {project.title}
+              </h1>
+              <p className="text-gray-500 dark:text-gray-400 text-sm mb-6">{project.subinfo}</p>
+
+              {/* 4. Description box diubah */}
+              <p className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-md dark:border dark:border-gray-700 p-6 rounded-xl shadow leading-relaxed whitespace-pre-line text-gray-700 dark:text-gray-300 mb-8">
+                {project.description.trim()}
+              </p>
+
+              {/* Features */}
+              {project.features && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold text-blue-600 dark:text-cyan-500 mb-3">Key Features</h3>
+                  <ul className="space-y-2">
+                    {project.features.map((f, i) => (
+                      <li key={i} className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+                        <FaCheckCircle className="text-cyan-500 mt-1 flex-shrink-0" />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Technologies */}
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-blue-600 dark:text-cyan-500 mb-3 flex items-center gap-2">
+                  <FaCogs /> Technologies Used
+                </h3>
+                <div className="flex gap-2 flex-wrap">
+                  {/* 5. Tech tags diubah */}
+                  {project.tech.map((t, i) => (
+                    <span key={i} className="px-3 py-1 bg-blue-100 dark:bg-gray-700 text-blue-800 dark:text-cyan-300 font-medium rounded-full text-sm">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Action Links */}
+              <div className="flex gap-4">
+                {project.github && (
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white text-sm hover:bg-black transition shadow-lg">
+                    <FaGithub /> View on GitHub
+                  </a>
+                )}
+                {project.demo && (
+                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-green-500 text-white text-sm hover:bg-green-600 transition shadow-lg">
+                    <FaExternalLinkAlt /> Live Demo
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Gaya Swiper diubah agar responsif terhadap tema */}
       <style>
         {`
-          .swiper-button-prev,
-          .swiper-button-next {
-            color: #0ea5e9; /* cyan-500 */
-            width: 28px;
-            height: 28px;
+          .project-swiper .swiper-button-prev,
+          .project-swiper .swiper-button-next {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.3);
+            width: 36px;
+            height: 36px;
+            border-radius: 100%;
+            transition: background-color 0.3s;
           }
-          .swiper-button-prev::after,
-          .swiper-button-next::after {
+          .project-swiper .swiper-button-prev:hover,
+          .project-swiper .swiper-button-next:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+          }
+          .project-swiper .swiper-button-prev::after,
+          .project-swiper .swiper-button-next::after {
             font-size: 16px;
             font-weight: bold;
           }
+          .project-swiper .swiper-pagination-bullet {
+            background: white;
+            opacity: 0.6;
+          }
+          .project-swiper .swiper-pagination-bullet-active {
+            background: #0ea5e9; /* cyan-500 */
+            opacity: 1;
+          }
         `}
       </style>
-    </section>
+    </PageLayout>
   );
 }

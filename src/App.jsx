@@ -2,12 +2,12 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "./context/ThemeContext"; 
 
 // Halaman utama
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Resume from "./components/Resume";
 import Services from "./components/Service";
 import Portfolio from "./components/Porto";
 import Sertifikat from "./components/Sertifikat";
@@ -38,15 +38,17 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <Routes>
-        {/* Halaman utama */}
-        <Route path="/" element={<HomePage />} />
+    <ThemeProvider> {/* <-- 2. Bungkus semua di sini */}
+      <Router>
+        <Routes>
+          {/* Halaman utama */}
+          <Route path="/" element={<HomePage />} />
 
-        {/* Halaman detail project */}
-        <Route path="/projects/:id" element={<ProjectDetails />} />
-      </Routes>
-    </Router>
+          {/* Halaman detail project */}
+          <Route path="/projects/:id" element={<ProjectDetails />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 
