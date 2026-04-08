@@ -1,11 +1,12 @@
 import React from "react";
 import { FaArrowDown } from "react-icons/fa";
-import InteractiveBackground from "./InteractiveBackground";
+import InteractiveBackground from "../InteractiveBackground";
 import { Typewriter } from "react-simple-typewriter";
+import { scrollToSection } from "@/utils/scrollToSection";
 
 export default function Hero() {
   const scrollToProjects = () => {
-    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection('projects');
   };
 
   return (
@@ -57,21 +58,27 @@ export default function Hero() {
         <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={scrollToProjects}
-            className="px-8 py-3 rounded-full font-semibold text-white
-                       bg-blue-600 dark:bg-cyan-500
-                       hover:scale-105 shadow-lg hover:shadow-xl
-                       transition-all transform duration-300"
+            className="px-8 py-3 rounded-lg font-semibold text-white
+                       bg-gradient-to-r from-blue-600 to-blue-700
+                       shadow-lg hover:shadow-xl
+                       hover:scale-102 hover:from-blue-700 hover:to-blue-800
+                       transition-all duration-300 active:scale-98"
           >
             View My Projects
           </button>
           <a
             href="#contact"
-            className="px-8 py-3 rounded-full font-semibold
-                       bg-white/70 dark:bg-gray-800/70 backdrop-blur-md
-                       text-gray-800 dark:text-gray-200
-                       border border-gray-200 dark:border-gray-700
-                       hover:scale-105 shadow-lg hover:shadow-xl
-                       transition-all transform duration-300"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('contact');
+            }}
+            className="px-8 py-3 rounded-lg font-semibold cursor-pointer
+                       bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm
+                       text-blue-600 dark:text-cyan-400
+                       border-2 border-blue-600 dark:border-cyan-400
+                       shadow-md hover:shadow-lg
+                       hover:scale-102 hover:bg-white dark:hover:bg-gray-700
+                       transition-all duration-300 active:scale-98"
           >
             Contact Me
           </a>
@@ -82,7 +89,11 @@ export default function Hero() {
       <div className="absolute bottom-8 left-0 right-0 flex justify-center z-20">
         <a
           href="#about"
-          className="flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-cyan-400 transition group"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('about');
+          }}
+          className="flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-cyan-400 transition group cursor-pointer"
           aria-label="Scroll to About section"
         >
           <span className="text-sm font-semibold mb-1">Scroll Down</span>

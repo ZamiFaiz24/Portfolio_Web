@@ -119,7 +119,11 @@ const Contact: React.FC<ContactProps> = (props) => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full md:w-auto mt-6 inline-flex justify-center items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-blue-800 via-blue-600 to-cyan-400 text-white font-semibold shadow-md hover:scale-105 hover:shadow-xl transition-all duration-300 disabled:opacity-50"
+          className="w-full md:w-auto mt-6 inline-flex justify-center items-center gap-2 px-8 py-3 rounded-lg 
+                     bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold
+                     shadow-lg hover:shadow-xl hover:scale-102 hover:from-blue-700 hover:to-blue-800
+                     transition-all duration-300 active:scale-98
+                     disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100"
         >
           {loading ? "Sending..." : "Send Message"}
         </button>

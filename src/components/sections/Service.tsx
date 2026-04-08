@@ -1,4 +1,4 @@
-// src/components/Service.tsx
+// src/components/sections/Service.tsx
 
 import React, { useState } from "react";
 import { FaDatabase, FaLock, FaPlug, FaCode, FaBolt } from "react-icons/fa";
@@ -88,17 +88,17 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => {
 
   const titleVariants = {
     initial: { y: 0 },
-    hover: { y: -60 }, // Jarak geser ke atas ditambah
+    hover: { y: -40 }, // Subtle movement
   };
 
   const hintVariants = {
     initial: { opacity: 1 },
-    hover: { opacity: 0 }, // Teks petunjuk menghilang saat di-hover
+    hover: { opacity: 0 }, // Smooth fade out
   }
   
   const detailsVariants = {
-    initial: { opacity: 0, y: 30 },
-    hover: { opacity: 1, y: 0, transition: { delay: 0.2 } },
+    initial: { opacity: 0, y: 20 },
+    hover: { opacity: 1, y: 0, transition: { duration: 0.3 } }, // No delay, faster
   };
 
   return (
@@ -109,15 +109,15 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => {
                  bg-white/70 dark:bg-gray-800/70 backdrop-blur-md 
                  dark:border dark:border-gray-700 shadow-lg rounded-2xl
                  transition-shadow duration-300"
-      // 2. Efek angkat dan glow lebih halus
-      whileHover={{ scale: 1.03, y: -10, boxShadow: "0 10px 30px -5px rgba(34, 211, 238, 0.2)" }}
+      // Subtle lift and enhanced shadow
+      whileHover={{ scale: 1.02, y: -5, boxShadow: "0 15px 40px -5px rgba(34, 211, 238, 0.15)" }}
     >
       {/* 3. Posisi ikon & judul dibuat absolute agar animasi lebih presisi */}
       <motion.div
         className="absolute top-1/2 left-8 right-8 -translate-y-1/2 text-center"
         variants={titleVariants}
         animate={isHovered ? "hover" : "initial"}
-        transition={{ duration: 0.4, ease: "easeInOut" }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
       >
         <span className="inline-block text-5xl text-blue-500 dark:text-cyan-400 mb-4">{service.icon}</span>
         <h3 className="text-xl font-bold text-gray-800 dark:text-white">
@@ -141,7 +141,7 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => {
             initial="initial"
             animate="hover"
             exit="initial"
-            transition={{ duration: 0.4, ease: "easeInOut" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
           >
             <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
               {service.desc}

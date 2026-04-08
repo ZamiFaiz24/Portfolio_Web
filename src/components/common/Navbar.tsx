@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useTheme } from "@/context/ThemeContext";
 import { FaSun, FaMoon } from "react-icons/fa";
 import ThemeToggle from "./ThemeToggle";
+import { scrollToSection } from "@/utils/scrollToSection";
 
 function useScrollSpy(sectionIds: string[]) {
   const [activeId, setActiveId] = useState("");
@@ -38,8 +39,12 @@ export default function Navbar() {
   const navLink = (id: string, label: string) => (
     <a
       href={`#${id}`}
+      onClick={(e) => {
+        e.preventDefault();
+        scrollToSection(id);
+      }}
       // Gaya link diubah untuk mendukung dark mode
-      className={`relative group px-2 py-1 transition duration-300 
+      className={`relative group px-2 py-1 transition duration-300 cursor-pointer
         ${activeId === id 
           ? "text-blue-600 dark:text-cyan-400 font-semibold" 
           : "text-gray-800 hover:text-blue-600 dark:text-gray-300 dark:hover:text-cyan-400"
@@ -89,8 +94,12 @@ export default function Navbar() {
             <a
               key={id}
               href={`#${id}`}
-              onClick={() => setIsOpen(false)}
-              className={`block transition duration-300 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(id);
+                setIsOpen(false);
+              }}
+              className={`block transition duration-300 cursor-pointer
                 ${activeId === id 
                   ? "text-blue-600 dark:text-cyan-400 font-semibold" 
                   : "text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-cyan-400"

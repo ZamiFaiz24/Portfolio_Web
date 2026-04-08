@@ -1,4 +1,4 @@
-// src/components/Footer.tsx
+// src/components/common/Footer.tsx
 
 import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";

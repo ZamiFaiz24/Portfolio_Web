@@ -5,14 +5,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext"; 
 
 // Halaman utama
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Services from "./components/Service";
-import Portfolio from "./components/Porto";
-import Sertifikat from "./components/Sertifikat";
+import Navbar from "./components/common/Navbar";
+import Hero from "./components/sections/Hero";
+import About from "./components/sections/About";
+import Services from "./components/sections/Service";
+import Portfolio from "./components/sections/Porto";
+import Sertifikat from "./components/sections/Sertifikat";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Footer from "./components/common/Footer";
 
 // Halaman project detail
 import ProjectDetails from "./pages/ProjectDetails";
@@ -21,7 +21,7 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100">
       <Navbar />
-      <Hero data-aos="fade-up" />
+      <Hero />
       <About data-aos="fade-up" />
       <Services data-aos="fade-up" />
       <Portfolio data-aos="fade-up" />
@@ -34,7 +34,16 @@ function HomePage() {
 
 function App() {
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
+    // Delay AOS initialization untuk menghindari layout shift saat page load
+    const timer = setTimeout(() => {
+      AOS.init({ 
+        duration: 800, 
+        once: true,
+        offset: 100 // Trigger animasi sebelum elemen visible di screen
+      });
+    }, 300);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (

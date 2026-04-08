@@ -70,11 +70,10 @@ const NotificationModal: React.FC<NotificationModalProps> = ({ popup, onClose })
           {/* Tombol Close */}
           <button
             onClick={onClose}
-            className={`w-full px-4 py-2 font-semibold text-white rounded-lg transition-transform transform hover:scale-105
+            className={`w-full px-4 py-2 font-semibold text-white rounded-lg transition-all duration-300 hover:scale-102 active:scale-98
               ${isSuccess 
-                // 2. Warna tombol sukses diubah
-                ? 'bg-blue-600 hover:bg-blue-700 dark:bg-cyan-500 dark:hover:bg-cyan-600' 
-                : 'bg-red-600 hover:bg-red-700'
+                ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl' 
+                : 'bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 shadow-lg hover:shadow-xl'
               }`}
           >
             Close

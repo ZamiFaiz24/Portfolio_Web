@@ -1,4 +1,4 @@
-// src/components/Porto.tsx
+// src/components/sections/Porto.tsx
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
@@ -42,7 +42,7 @@ const Projects: React.FC<ProjectsProps> = (props) => {
           Projects
         </h2>
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-lg">
-          Some of the projects I’ve worked on.
+          Some of the projects I've worked on.
         </p>
       </div>
 
@@ -51,9 +51,9 @@ const Projects: React.FC<ProjectsProps> = (props) => {
           <button
             key={category}
             onClick={() => setActiveFilter(category)}
-            className={`px-4 py-2 rounded-full text-sm md:text-base font-semibold transition-all duration-300
+            className={`px-4 py-2 rounded-lg text-sm md:text-base font-semibold transition-all duration-300
               ${activeFilter === category
-                ? "bg-blue-600 dark:bg-cyan-500 text-white shadow-lg scale-105"
+                ? "bg-gradient-to-r from-blue-600 to-blue-700 dark:from-cyan-500 dark:to-cyan-600 text-white shadow-lg"
                 : "bg-white/70 dark:bg-gray-800/70 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
               }`}
           >
@@ -68,29 +68,52 @@ const Projects: React.FC<ProjectsProps> = (props) => {
       >
         {filteredProjects.map((project) => (
           <motion.div
-            layout // Pertahankan ini untuk animasi perpindahan posisi kartu
+            layout
             key={project.id}
             className="group rounded-2xl overflow-hidden shadow-lg bg-white/70 dark:bg-gray-800/70 backdrop-blur-md dark:border dark:border-gray-700 
-                       transition-all duration-300 transform hover:shadow-blue-300 dark:hover:shadow-cyan-500/20 hover:scale-105 relative"
+                       transition-all duration-300 transform hover:shadow-2xl dark:hover:shadow-cyan-500/30 hover:scale-102 relative flex flex-col"
           >
-            {/* ... Konten kartu proyek (tidak berubah) ... */}
-            <div className="relative">
-              <img src={project.img} alt={project.title} className="w-full h-48 object-cover"/>
-              <div className="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <p className="text-gray-200 text-sm mt-2">{project.desc}</p>
+            {/* Image Container */}
+            <div className="relative h-64 overflow-hidden bg-gray-200 dark:bg-gray-700">
+              <img src={project.img} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+              
+              {/* Category Badge */}
+              <div className="absolute top-3 right-3 z-10">
+                <span className="px-3 py-1 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 shadow-md">
+                  {project.category}
+                </span>
+              </div>
+              
+              {/* Overlay - Faster fade */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end px-4 pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-gray-100 text-sm line-clamp-3 mb-3">{project.desc}</p>
                 <Link
                   to={`/projects/${project.id}`}
-                  className="px-4 py-2 mt-5 text-white border border-white/50 rounded-lg bg-white/10 backdrop-blur-md shadow-md transition-all duration-300 text-sm hover:bg-white/20 hover:border-white"
+                  className="px-4 py-2 text-white font-semibold rounded-lg bg-blue-600 hover:bg-blue-700 shadow-lg transition-all duration-300 text-center text-sm"
                 >
                   View Project
                 </Link>
               </div>
             </div>
-            <div className="p-4 text-center relative">
-              <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors">
+            
+            {/* Content Section - Always Visible */}
+            <div className="p-4 flex-1 flex flex-col">
+              <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors mb-2">
                 {project.title}
               </h3>
-              <span className="absolute left-1/2 -translate-x-1/2 bottom-2 w-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 group-hover:w-1/2 transition-all duration-500 rounded-full"></span>
+              
+              {/* Short description visible on all devices */}
+              <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-3 flex-1">
+                {project.desc}
+              </p>
+              
+              {/* Category visible on card for mobile */}
+              <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-gray-600">
+                <span className="inline-block px-2 py-1 rounded text-xs font-medium text-blue-600 dark:text-cyan-400 bg-blue-50 dark:bg-gray-700">
+                  {project.category}
+                </span>
+                <span className="text-xs text-gray-400">Click to explore</span>
+              </div>
             </div>
           </motion.div>
         ))}
