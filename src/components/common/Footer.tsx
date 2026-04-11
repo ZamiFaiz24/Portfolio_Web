@@ -1,9 +1,13 @@
 // src/components/common/Footer.tsx
 
 import React from "react";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowUp } from "react-icons/fa";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const navLinks = [
     { href: "#about", label: "About" },
     { href: "#projects", label: "Projects" },
@@ -69,10 +73,19 @@ const Footer = () => {
         </div>
 
         {/* Garis Pemisah dan Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-700/50 text-center">
+        <div className="mt-12 pt-8 border-t border-gray-700/50 flex flex-col sm:flex-row items-center justify-between">
           <p className="text-sm text-gray-500">
             &copy; {new Date().getFullYear()} Faiz Zamzami. All Rights Reserved.
           </p>
+          
+          {/* Back to Top Button */}
+          <button
+            onClick={scrollToTop}
+            className="mt-4 sm:mt-0 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-102 active:scale-98"
+            aria-label="Back to top"
+          >
+            <FaArrowUp className="text-lg" /> Back to Top
+          </button>
         </div>
 
       </div>

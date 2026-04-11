@@ -67,7 +67,7 @@ export default function About(props: AboutProps) {
             <InfoItem icon={<FaEnvelope />} label="Email" value="faizzamzami10p@gmail.com" />
             <InfoItem icon={<FaPhone />} label="Phone" value="(+62) 838-6106-5430" />
           </div>
-          <a href="/files/Faiz_CV.pdf" download className="mt-6 inline-flex items-center gap-2 px-6 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 font-semibold shadow-lg hover:shadow-xl hover:scale-102 transition-all duration-300 active:scale-98">
+          <a href="/files/Faiz_CV.pdf" download className="mt-6 inline-flex items-center gap-2 px-6 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 font-semibold shadow-lg hover:shadow-xl hover:scale-102 transition-all duration-300 active:scale-98" title="Download your CV (Make sure file exists in /public/files/)">
             <FaDownload className="text-lg" /> Download CV
           </a>
         </div>

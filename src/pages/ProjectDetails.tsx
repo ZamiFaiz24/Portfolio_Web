@@ -4,69 +4,84 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import PageLayout from "../components/PageLayout";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 const projectDetails = [
   {
-    id: "sistem-pakar-sapi",
-    title: "Cattle Expert System",
-    subinfo: "Academic Project · Web App",
+    id: "task-management-system",
+    title: "Task Management System",
+    subinfo: "Personal Project · Fullstack Application",
     screenshots: [
-      "/images/potrfolio02.png",
-      "/images/porto-sapi-1.png",
-      "/images/porto-sapi-2.png",
+      "/images/project/My_ToDo/Task Manajement.png",
+      "/images/project/My_ToDo/1.png",
+      "/images/project/My_ToDo/2.png",
+      "/images/project/My_ToDo/3.png",
+      "/images/project/My_ToDo/4.png",
+      "/images/project/My_ToDo/5.png",
     ],
     description: `
-A web-based expert system designed to assist farmers in diagnosing cattle 
-diseases quickly and accurately using the Certainty Factor method.`,
+A task management system designed to help users organize and track daily activities efficiently. 
+This application provides a clean interface and essential features for managing tasks in a structured and productive way.`,
     features: [
-      "Symptom-based diagnosis",
-      "Disease management & recommendations",
-      "Confidence level for diagnosis",
-      "Simple dashboard for monitoring results",
+      "Create, update, and delete tasks (CRUD functionality)",
+      "Task status management (pending, in progress, completed)",
+      "Dashboard overview with task summaries",
+      "User authentication system",
+      "Responsive interface for desktop and mobile",
     ],
-    tech: ["Laravel", "MySQL", "Bootstrap"],
-    github: "https://github.com/username/cattle-expert-system",
+    tech: ["Laravel", "React", "Tailwind CSS", "MySQL"],
+    github: "https://github.com/ZamiFaiz24/task-management-system",
     demo: "",
   },
   {
-    id: "todo-list-laravel",
-    title: "Todo List App (Laravel)",
-    subinfo: "Personal Project · Productivity Tool",
+    id: "bps-data-management",
+    title: "Data Management System (BPS)",
+    subinfo: "Internship Project · Backend System",
     screenshots: [
-      "/images/My_ToDo/Poster Web.png",
-      "/images/My_ToDo/SS01.png",
-      "/images/My_ToDo/SS02.png"
-
+      "/images/project/bps/Data Manajement.png",
+      "/images/project/bps/1.png",
+      "/images/project/bps/2.png",
+      "/images/project/bps/3.png",
     ],
     description: `
-A simple task management application built with Laravel, designed to help 
-users organize their daily activities.`,
+A backend system developed during an internship at BPS to manage and process regional statistical data. 
+The system focuses on efficient data handling, structured workflows, and reliable API services for data operations.`,
     features: [
-      "CRUD operations for tasks",
-      "Authentication & user roles",
-      "Progress tracking dashboard",
+      "Statistical data management and processing",
+      "Data filtering and structured data retrieval",
+      "RESTful API for data access and integration",
+      "Data validation and error handling",
+      "Optimized database queries for performance",
+      "Basic activity logging for data operations",
     ],
-    tech: ["Laravel", "MySQL", "TailwindCSS"],
-    github: "https://github.com/username/todo-list-laravel",
+    tech: ["Laravel", "MySQL", "RESTful API", "PHP"],
+    github: "https://github.com/ZamiFaiz24/bps-data-management",
     demo: "",
   },
   {
-    id: "iot-dummy-api",
-    title: "IoT Dummy API",
-    subinfo: "Backend API · Simulation",
-    screenshots: ["/src/images/porto-iot.png"],
-    description: `
-A RESTful API created for simulating IoT device behavior.`,
-    features: [
-      "Device ON/OFF state management",
-      "Activity logs for testing",
-      "Secure auth with Laravel Sanctum",
+    id: "iot-dashboard",
+    title: "IoT Monitoring & Control Dashboard",
+    subinfo: "Capstone Project · Fullstack IoT System",
+    screenshots: [
+      "/images/project/steci/IoT Monitoring.png",
+      "/images/project/steci/1.png",
+      "/images/project/steci/2.png",
+      "/images/project/steci/3.png",
+      "/images/project/steci/4.png",
+      "/images/project/steci/5.png",
     ],
-    tech: ["Laravel", "REST API", "Sanctum"],
-    github: "https://github.com/username/iot-dummy-api",
+    description: `
+An IoT-based dashboard system developed for monitoring and controlling devices in egg clustering processes. 
+The system provides real-time visualization and control features to simulate device interaction and data monitoring.`,
+    features: [
+      "Device monitoring dashboard with real-time data simulation",
+      "Control system for device status (ON/OFF)",
+      "Data visualization using charts and metrics",
+      "Activity logs for monitoring device actions",
+      "User interface for managing multiple devices",
+      "Structured API integration for device communication",
+    ],
+    tech: ["Laravel", "Vue.js", "MySQL", "REST API"],
+    github: "https://github.com/ZamiFaiz24/iot-dashboard",
     demo: "",
   },
 ];
@@ -128,7 +143,7 @@ export default function ProjectDetails() {
                 navigation
                 pagination={{ clickable: true }}
                 loop={true}
-                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                autoplay={{ delay: 4000, disableOnInteraction: false }}
                 className="project-swiper"
               >
                 {project.screenshots.map((src, i) => (
@@ -136,7 +151,7 @@ export default function ProjectDetails() {
                     <img
                       src={src}
                       alt={`${project.title} screenshot ${i + 1}`}
-                      className="w-full h-auto aspect-video object-cover"
+                      className="w-full h-auto object-contain bg-gray-100 dark:bg-gray-800"
                     />
                   </SwiperSlide>
                 ))}

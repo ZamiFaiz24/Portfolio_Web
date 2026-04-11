@@ -22,12 +22,12 @@ const certificates = [
   {
     title: "Belajar Membuat Aplikasi Back-End untuk Pemula",
     issuer: "Dicoding Indonesia",
-    link: "https://www.dicoding.com/certificates/XXXXXX",
+    link: "https://www.dicoding.com/certificates/EB8NWQWE", // TODO: Replace with actual certificate ID
   },
   {
     title: "Database Design & SQL",
     issuer: "Coursera",
-    link: "https://coursera.org/certificates/XXXXXX",
+    link: "https://coursera.org/verify/XXXXXXX", // TODO: Replace with actual certificate URL
   },
   {
     title: "Udemy PHP Laravel Build Real Estate Management System",
@@ -69,7 +69,7 @@ export default function Sertifikat(props: CertificatesProps) {
             key={idx}
             variants={listItemVariant}
             className="flex flex-col items-center bg-white/70 dark:bg-gray-800/70 backdrop-blur-md dark:border dark:border-gray-700 rounded-xl shadow-lg px-6 py-8 
-                       hover:shadow-xl dark:hover:shadow-cyan-500/10 hover:scale-105 transition-all duration-300 group"
+                       hover:shadow-xl dark:hover:shadow-cyan-500/10 hover:scale-102 transition-all duration-300 group"
           >
             <FaAward className="text-blue-500 dark:text-cyan-400 text-6xl mb-4 
                               group-hover:text-cyan-500 dark:group-hover:text-cyan-300 group-hover:scale-110 
