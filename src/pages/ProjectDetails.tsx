@@ -106,8 +106,8 @@ The system applies Forward Chaining and Certainty Factor methods to produce a di
       "Responsive interface for desktop and mobile",
     ],
     tech: ["Laravel", "React", "TypeScript", "MySQL", "Tailwind CSS"],
-    github: "",
-    demo: "",
+    github: "https://github.com/ZamiFaiz24/SapiDoc-Expert-System",
+    demo: "https://sapidoc-expert-system.ethiodeploy.app/",
   },
 ];
 
