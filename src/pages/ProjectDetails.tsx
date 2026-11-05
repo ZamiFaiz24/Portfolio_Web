@@ -84,6 +84,31 @@ The system provides real-time visualization and control features to simulate dev
     github: "https://github.com/ZamiFaiz24/iot-dashboard",
     demo: "",
   },
+  {
+    id: "sapidoc-expert-system",
+    title: "SapiDoc - Cattle Disease Expert System",
+    subinfo: "Personal Project · Fullstack Expert System",
+    screenshots: [
+      "/images/project/SapiDoc/SapiDoc.png",
+      "/images/project/SapiDoc/1.png",
+      "/images/project/SapiDoc/2.png",
+      "/images/project/SapiDoc/3.png",
+      "/images/project/SapiDoc/4.png",
+    ],
+    description: `
+A web-based expert system designed to help farmers identify potential cattle diseases based on observed symptoms.
+The system applies Forward Chaining and Certainty Factor methods to produce a diagnosis with a confidence value.`,
+    features: [
+      "Cattle disease diagnosis based on selected symptoms",
+      "Forward Chaining inference method",
+      "Certainty Factor calculation for diagnosis confidence",
+      "Disease and symptom data management",
+      "Responsive interface for desktop and mobile",
+    ],
+    tech: ["Laravel", "React", "TypeScript", "MySQL", "Tailwind CSS"],
+    github: "",
+    demo: "",
+  },
 ];
 
 export default function ProjectDetails() {

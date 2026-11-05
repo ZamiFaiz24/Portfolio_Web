@@ -31,6 +31,15 @@ const projects = [
     category: "Fullstack",
     tech: ["Laravel", "Vue", "MySQL", "REST API"],
   },
+
+  {
+    id: "sapidoc-expert-system",
+    title: "SapiDoc - Cattle Disease Expert System",
+    desc: "A web-based expert system for diagnosing cattle diseases using Forward Chaining and Certainty Factor methods, helping farmers identify potential diseases based on observed symptoms.",
+    img: "/images/project/SapiDoc/SapiDoc.png",
+    category: "Fullstack",
+    tech: ["Laravel", "React", "TypeScript", "MySQL", "Tailwind CSS"],
+  },
 ];
 
 const Projects: React.FC<ProjectsProps> = (props) => {
