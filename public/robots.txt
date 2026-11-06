@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zamifaiz.my.id/sitemap.xml
+Sitemap: https://faiz-zamzami.netlify.app/sitemap.xml

@@ -1,45 +1,130 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta name="google-site-verification" content="makX3V5kDy35UDpfYRjWNqITYGaf658U7vr10WpI7r0" />
     <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-site-verification"
+      content="makX3V5kDy35UDpfYRjWNqITYGaf658U7vr10WpI7r0"
+    />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.ico" />
+
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0ea5e9" />
-    <meta name="description"
-      content="Portfolio of Faiz Zamzami, a Junior Backend Developer specializing in Laravel, RESTful APIs, and IoT systems. Showcasing real-world projects and technical skills." />
-    <meta property="og:title" content="Faiz Zamzami | Junior Backend Developer Portfolio" />
-    <meta property="og:description" content="Showcasing projects, certificates, and skills as a Junior Backend Developer specializing in Laravel and REST APIs." />
-    <meta property="og:image" content="https://zamifaiz.my.id/images/Profil.JPG" />
+    <meta
+      name="description"
+      content="Portfolio of Faiz Zamzami, a fresh graduate full-stack developer with a backend focus, specializing in Laravel, RESTful APIs, MySQL, React, and TypeScript. Open to backend or full-stack roles."
+    />
+    <meta
+      name="keywords"
+      content="Faiz Zamzami, Fresh Graduate, Junior Full Stack Developer, Backend Developer, Laravel Developer, React Developer, RESTful APIs, MySQL, TypeScript, Portfolio, Indonesia"
+    />
+    <meta name="author" content="Faiz Zamzami" />
+    <link rel="canonical" href="https://faiz-zamzami.netlify.app/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Faiz Zamzami Portfolio" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      property="og:title"
+      content="Faiz Zamzami | Junior Full Stack Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Fresh graduate full-stack developer with a backend focus, specializing in Laravel, REST APIs, MySQL, React, and TypeScript. Open to backend or full-stack roles."
+    />
+    <meta
+      property="og:url"
+      content="https://faiz-zamzami.netlify.app/"
+    />
+    <meta
+      property="og:image"
+      content="https://faiz-zamzami.netlify.app/images/og-image.png"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://zamifaiz.my.id/" />
-    <link rel="canonical" href="https://zamifaiz.my.id/" />
-    <meta name="keywords"
-      content="Faiz Zamzami, Junior Backend Developer, Laravel Developer, RESTful APIs, IoT Systems, Portfolio, Indonesia" />
-    <meta name="author" content="Faiz Zamzami" />
-    <link rel="apple-touch-icon" href="/favicon.ico" />
+    <meta
+      property="og:image:alt"
+      content="Faiz Zamzami — Junior Full Stack Developer"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Faiz Zamzami | Junior Full Stack Developer Portfolio"
+    />
+    <meta
+      name="twitter:description"
+      content="Fresh graduate full-stack developer with a backend focus, specializing in Laravel, REST APIs, MySQL, React, and TypeScript. Open to backend or full-stack roles."
+    />
+    <meta
+      name="twitter:image"
+      content="https://faiz-zamzami.netlify.app/images/og-image.png"
+    />
+
+    <script>
+      (function () {
+        try {
+          var storedTheme = localStorage.getItem("theme");
+          var isDark =
+            storedTheme === "dark" ||
+            (storedTheme !== "light" &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+          document.documentElement.classList.add(isDark ? "dark" : "light");
+          document.documentElement.style.colorScheme = isDark
+            ? "dark"
+            : "light";
+        } catch (error) {
+          // The app will apply the system theme after mounting.
+        }
+      })();
+    </script>
 
     <!-- JSON-LD Schema for Rich Snippets -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Faiz Zamzami",
-      "url": "https://zamifaiz.my.id",
-      "jobTitle": "Junior Backend Developer",
-      "description": "Junior Backend Developer specializing in Laravel, RESTful APIs, and IoT systems",
-      "image": "https://zamifaiz.my.id/images/Profil.JPG",
-      "sameAs": [
-        "https://github.com/ZamiFaiz24"
-      ],
-      "knowsAbout": ["Laravel", "PHP", "MySQL", "REST API", "Vue.js", "React", "Tailwind CSS"]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Faiz Zamzami",
+        "url": "https://faiz-zamzami.netlify.app/",
+        "jobTitle": "Junior Full Stack Developer",
+        "description": "Fresh graduate full-stack developer with a backend focus, specializing in Laravel, RESTful APIs, MySQL, React, and TypeScript.",
+        "image": "https://faiz-zamzami.netlify.app/images/og-image.png",
+        "email": "faizzamzami10p@gmail.com",
+        "telephone": "+6283861065430",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kebumen",
+          "addressRegion": "Central Java",
+          "addressCountry": "ID"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Universitas Putra Bangsa Kebumen"
+        },
+        "sameAs": [
+          "https://github.com/ZamiFaiz24",
+          "https://www.linkedin.com/in/faiz-zamzami-1189492ab/"
+        ],
+        "knowsAbout": [
+          "Laravel",
+          "PHP",
+          "MySQL",
+          "PostgreSQL",
+          "REST API",
+          "React",
+          "TypeScript",
+          "JavaScript",
+          "Tailwind CSS",
+          "Git"
+        ]
+      }
     </script>
 
-  <title>Faiz Zamzami - Junior Backend Developer Portfolio</title>  </head>
+    <title>Faiz Zamzami - Junior Full Stack Developer Portfolio</title>
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
