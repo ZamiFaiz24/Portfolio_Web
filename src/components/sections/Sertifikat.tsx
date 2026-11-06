@@ -2,9 +2,8 @@
 
 import React from "react";
 import { FaAward } from "react-icons/fa";
-import { motion } from "framer-motion"; // <-- Tetap gunakan Framer Motion untuk animasi
+import { motion } from "framer-motion";
 
-// Varian animasi untuk staggered effect
 const listContainerVariant = {
   hidden: { opacity: 0 },
   visible: {
@@ -22,12 +21,7 @@ const certificates = [
   {
     title: "Belajar Membuat Aplikasi Back-End untuk Pemula",
     issuer: "Dicoding Indonesia",
-    link: "https://www.dicoding.com/certificates/EB8NWQWE", // TODO: Replace with actual certificate ID
-  },
-  {
-    title: "Database Design & SQL",
-    issuer: "Coursera",
-    link: "https://coursera.org/verify/XXXXXXX", // TODO: Replace with actual certificate URL
+    link: "https://www.dicoding.com/certificates/EB8NWQWE",
   },
   {
     title: "Udemy PHP Laravel Build Real Estate Management System",
@@ -40,6 +34,7 @@ type CertificatesProps = React.HTMLAttributes<HTMLElement>;
 
 export default function Sertifikat(props: CertificatesProps) {
   const { className, ...rest } = props;
+
   return (
     <section
       id="sertifikat"
@@ -51,43 +46,37 @@ export default function Sertifikat(props: CertificatesProps) {
           Certificates
         </h2>
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-lg">
-          Proof of my learning journey & achievements in technology.
+          Proof of my learning journey and achievements in technology.
         </p>
       </div>
 
-      {/* Grid Certificates dengan animasi stagger */}
       <motion.div
         variants={listContainerVariant}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-        className="max-w-5xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8"
+        className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-8"
       >
-        {certificates.map((cert, idx) => (
-          // Desain kartu kembali seperti sebelumnya, tapi dibungkus motion.div
+        {certificates.map((cert) => (
           <motion.div
-            key={idx}
+            key={cert.title}
             variants={listItemVariant}
-            className="flex flex-col items-center bg-white/70 dark:bg-gray-800/70 backdrop-blur-md dark:border dark:border-gray-700 rounded-xl shadow-lg px-6 py-8 
-                       hover:shadow-xl dark:hover:shadow-cyan-500/10 hover:scale-102 transition-all duration-300 group"
+            className="flex h-full flex-col items-center rounded-xl border border-blue-100 bg-white px-6 py-8 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800 dark:hover:shadow-cyan-500/10 group"
           >
-            <FaAward className="text-blue-500 dark:text-cyan-400 text-6xl mb-4 
-                              group-hover:text-cyan-500 dark:group-hover:text-cyan-300 group-hover:scale-110 
-                              transition-all duration-300" />
+            <FaAward className="text-blue-500 dark:text-cyan-400 text-6xl mb-4 group-hover:text-cyan-500 dark:group-hover:text-cyan-300 group-hover:scale-110 transition-all duration-300" />
 
-            <h3 className="text-md font-bold text-gray-800 dark:text-gray-200 mb-2 text-center flex-grow">
+            <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-2 text-center flex-grow">
               {cert.title}
             </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{cert.issuer}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+              {cert.issuer}
+            </p>
 
             <a
               href={cert.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 px-6 py-2 rounded-lg 
-                         bg-gradient-to-r from-blue-600 to-blue-700 text-white
-                         hover:from-blue-700 hover:to-blue-800 font-semibold shadow-lg 
-                         hover:scale-102 hover:shadow-xl transition-all duration-300 active:scale-98"
+              className="mt-4 inline-flex items-center gap-2 px-6 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 active:scale-95"
             >
               View Certificate →
             </a>
