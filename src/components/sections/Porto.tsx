@@ -3,44 +3,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import {
+  FaArrowRight,
+  FaExternalLinkAlt,
+  FaGithub,
+  FaLock,
+} from "react-icons/fa";
+import { projects } from "../../data/projects";
 
 type ProjectsProps = React.HTMLAttributes<HTMLElement>;
-
-const projects = [
-  {
-    id: "task-management-system",
-    title: "Task Management System",
-    desc: "A clean task management system for organizing and tracking daily activities.",
-    img: "/images/project/My_ToDo/Task Manajement.png",
-    category: "Fullstack",
-    tech: ["Laravel", "React", "Tailwind"],
-  },
-  {
-    id: "bps-data-management",
-    title: "Data Management System (BPS)",
-    desc: "A backend system developed during internship to manage and process statistical data efficiently.",
-    img: "/images/project/bps/Data Manajement.png",
-    category: "Backend",
-    tech: ["Laravel", "MySQL", "RESTful API"],
-  },
-  {
-    id: "iot-dashboard",
-    title: "IoT Monitoring & Control Dashboard",
-    desc: "An IoT-based dashboard for monitoring and controlling devices in egg clustering processes.",
-    img: "/images/project/steci/IoT Monitoring.png",
-    category: "Fullstack",
-    tech: ["Laravel", "Vue", "MySQL", "REST API"],
-  },
-
-  {
-    id: "sapidoc-expert-system",
-    title: "SapiDoc - Cattle Disease Expert System",
-    desc: "A web-based expert system for diagnosing cattle diseases using Forward Chaining and Certainty Factor methods, helping farmers identify potential diseases based on observed symptoms.",
-    img: "/images/project/SapiDoc/SapiDoc.png",
-    category: "Fullstack",
-    tech: ["Laravel", "React", "TypeScript", "MySQL", "Tailwind CSS"],
-  },
-];
 
 const Projects: React.FC<ProjectsProps> = (props) => {
   const { className, ...rest } = props;
@@ -55,62 +26,106 @@ const Projects: React.FC<ProjectsProps> = (props) => {
         <h2 className="text-3xl font-extrabold text-blue-700 dark:text-cyan-400 border-b-4 border-blue-400 dark:border-cyan-500 inline-block w-fit">
           Projects
         </h2>
-        <p className="mt-4 text-gray-600 dark:text-gray-400 text-lg">
-          Some of the projects I've worked on.
+        <p className="mt-4 text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+          Selected projects — from backend APIs to full-stack applications.
         </p>
       </div>
 
-      {/* Grid Proyek - Tech Stack Focus */}
-      <motion.div
-        className="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-2 gap-8"
-      >
+      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
         {projects.map((project) => (
-          <motion.div
-            layout
+          <motion.article
             key={project.id}
-            className="group rounded-2xl overflow-hidden shadow-lg bg-white/70 dark:bg-gray-800/70 backdrop-blur-md dark:border dark:border-gray-700 
-                       transition-all duration-300 transform hover:shadow-2xl dark:hover:shadow-cyan-500/30 hover:scale-102 relative flex flex-col"
+            whileHover={{ y: -4 }}
+            className="group flex h-full flex-col overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-lg transition-shadow duration-300 hover:shadow-2xl dark:border-gray-700 dark:bg-gray-800"
           >
-            {/* Image Container */}
-            <div className="relative h-80 overflow-hidden bg-gray-200 dark:bg-gray-700">
-              <img src={project.img} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
-              
-              {/* Overlay - Faster fade */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end px-4 pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Link
-                  to={`/projects/${project.id}`}
-                  className="px-4 py-2 text-white font-semibold rounded-lg bg-blue-600 hover:bg-blue-700 shadow-lg transition-all duration-300 text-center text-sm"
-                >
-                  View Project
-                </Link>
+            <Link
+              to={`/projects/${project.id}`}
+              aria-label={`View details for ${project.title}`}
+              className="relative block aspect-[3/2] overflow-hidden bg-gray-100 dark:bg-gray-700"
+            >
+              <img
+                src={project.img}
+                alt={`${project.title} project cover`}
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+            </Link>
+
+            <div className="flex flex-1 flex-col p-5">
+              <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+                <p className="text-xs font-semibold uppercase tracking-wide text-blue-600 dark:text-cyan-400">
+                  {project.category} · {project.subinfo.split(" · ")[0]}
+                </p>
+                {project.period && (
+                  <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
+                    {project.period}
+                  </span>
+                )}
               </div>
-            </div>
-            
-            {/* Content Section - Tech Stack Focus */}
-            <div className="p-4 flex-1 flex flex-col">
-              <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors mb-2">
+              <h3 className="mt-2 text-lg font-bold text-gray-800 transition-colors group-hover:text-blue-600 dark:text-gray-100 dark:group-hover:text-cyan-400">
                 {project.title}
               </h3>
-              
-              {/* Short description visible on all devices */}
-              <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-3 flex-1">
+
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600 line-clamp-2 dark:text-gray-400">
                 {project.desc}
               </p>
-              
-              {/* Tech Stack Tags - Main Focus */}
-              <div className="pt-3 border-t border-gray-200 dark:border-gray-600">
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((t, i) => (
-                    <span key={i} className="px-2 py-1 rounded text-xs font-semibold text-blue-700 dark:text-cyan-300 bg-blue-100 dark:bg-cyan-900/40 border border-blue-200 dark:border-cyan-700">
-                      {t}
-                    </span>
-                  ))}
-                </div>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                {project.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded border border-blue-200 bg-blue-100 px-2 py-1 text-xs font-semibold text-blue-700 dark:border-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-gray-200 pt-4 dark:border-gray-700">
+                <Link
+                  to={`/projects/${project.id}`}
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+                >
+                  View details <FaArrowRight className="text-xs" />
+                </Link>
+
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-cyan-400"
+                  >
+                    <FaExternalLinkAlt className="text-xs" /> Live demo
+                  </a>
+                )}
+
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-cyan-400"
+                  >
+                    <FaGithub /> GitHub
+                  </a>
+                )}
+
+                {project.repoNote && (
+                  <span
+                    title={project.repoNote}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 dark:text-gray-400"
+                  >
+                    <FaLock className="text-xs" />{" "}
+                    {project.repoLabel ?? "Private"}
+                  </span>
+                )}
               </div>
             </div>
-          </motion.div>
+          </motion.article>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 };

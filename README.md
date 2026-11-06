@@ -1,13 +1,63 @@
-# React + Vite
+# Faiz Zamzami — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio for **Faiz Zamzami**, a fresh graduate full-stack developer
+with a backend focus. He works with Laravel, REST APIs, MySQL, React, and
+TypeScript. The site is built to be easy to scan for recruiters and hiring
+managers, with a responsive layout and light/dark themes.
 
-Currently, two official plugins are available:
+## Live site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Primary: [faiz-zamzami.netlify.app](https://faiz-zamzami.netlify.app/)
+- Mirror: [portfolio-web-tan-two.vercel.app](https://portfolio-web-tan-two.vercel.app/)
 
-## Expanding the ESLint configuration
+## Tech stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
->>>>>>> master
+- React 19 + Vite
+- TypeScript / JavaScript
+- Tailwind CSS v4
+- React Router
+- Framer Motion
+- Swiper
+
+## Features
+
+- Responsive portfolio layout with mobile navigation
+- Light, dark, and system theme modes
+- Experience and education overview
+- Project detail pages with screenshots, dates, and key features
+- Certificates, skills, and direct contact links
+- Downloadable CV
+
+## Getting started
+
+```bash
+npm install
+npm run dev
+```
+
+## Available scripts
+
+```bash
+npm run dev      # Start the development server
+npm run build    # Create a production build
+npm run preview  # Preview the production build
+npm run lint     # Run ESLint
+```
+
+Type checking is available with:
+
+```bash
+npx tsc --noEmit
+```
+
+## Deployment notes
+
+- **Netlify** uses `public/_redirects` so direct project URLs work.
+- **Vercel** uses `vercel.json` rewrites for the same SPA routing behavior.
+- The primary canonical URL currently points to the Netlify deployment.
+
+## Contact
+
+- Email: [faizzamzami10p@gmail.com](mailto:faizzamzami10p@gmail.com)
+- GitHub: [github.com/ZamiFaiz24](https://github.com/ZamiFaiz24)
+- LinkedIn: [linkedin.com/in/faiz-zamzami-1189492ab](https://www.linkedin.com/in/faiz-zamzami-1189492ab/)
