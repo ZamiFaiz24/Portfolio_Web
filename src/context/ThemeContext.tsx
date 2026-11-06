@@ -1,6 +1,10 @@
-"use client";
-
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+} from "react";
 
 type Theme = "light" | "dark" | "system";
 
@@ -11,50 +15,57 @@ type ThemeContextType = {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+function getInitialTheme(): Theme {
+  if (typeof window === "undefined") return "system";
+
+  try {
+    const storedTheme = window.localStorage.getItem("theme");
+    if (
+      storedTheme === "light" ||
+      storedTheme === "dark" ||
+      storedTheme === "system"
+    ) {
+      return storedTheme;
+    }
+  } catch {
+    // Ignore storage errors (e.g. private browsing mode).
+  }
+
+  return "system";
+}
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('system');
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
-  const applyTheme = useCallback((t: 'light' | 'dark') => {
-    const root = window.document.documentElement;
+  const applyTheme = useCallback((nextTheme: "light" | "dark") => {
+    const root = document.documentElement;
     root.classList.remove("light", "dark");
-    root.classList.add(t);
+    root.classList.add(nextTheme);
+    root.style.colorScheme = nextTheme;
   }, []);
 
-  // 3. useEffect ini berjalan sekali untuk inisialisasi
   useEffect(() => {
-    const storedTheme = window.localStorage.getItem("theme") as Theme | null;
-    // Jika ada tema tersimpan, gunakan. Jika tidak, default-nya adalah 'system'.
-    setTheme(storedTheme || 'system');
-  }, []);
+    try {
+      window.localStorage.setItem("theme", theme);
+    } catch {
+      // Ignore storage errors (e.g. private browsing mode).
+    }
 
-  // 4. useEffect ini berjalan setiap kali 'theme' (pilihan pengguna) berubah
-  useEffect(() => {
-    // Simpan pilihan pengguna ke localStorage
-    window.localStorage.setItem("theme", theme);
-
-    // Listener untuk mendeteksi perubahan tema OS
     const mql = window.matchMedia("(prefers-color-scheme: dark)");
 
-    const handleChange = (e: MediaQueryListEvent) => {
+    const handleChange = (event: MediaQueryListEvent) => {
       if (theme === "system") {
-        applyTheme(e.matches ? "dark" : "light");
+        applyTheme(event.matches ? "dark" : "light");
       }
     };
 
-    // Logika utama untuk menentukan dan menerapkan tema
     if (theme === "system") {
-      // Jika pilihan adalah 'system', terapkan tema sesuai OS saat ini
       applyTheme(mql.matches ? "dark" : "light");
-      // Dan dengarkan perubahannya
       mql.addEventListener("change", handleChange);
     } else {
-      // Jika pilihan adalah 'light' atau 'dark', langsung terapkan
       applyTheme(theme);
-      // Hapus listener agar tidak menimpa pilihan pengguna
-      mql.removeEventListener("change", handleChange);
     }
 
-    // Cleanup listener saat komponen unmount atau 'theme' berubah
     return () => mql.removeEventListener("change", handleChange);
   }, [theme, applyTheme]);
 

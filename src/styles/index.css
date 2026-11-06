@@ -18,11 +18,16 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 body {
-  /* Cukup reset margin */
   margin: 0;
+  min-height: 100vh;
 }
 
 /* HAPUS SEMUA GAYA UNTUK h1, a, dan button DARI SINI */
@@ -107,4 +112,18 @@ body {
   animation:
     typing 3s steps(25, end) forwards,
     blink 0.75s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
