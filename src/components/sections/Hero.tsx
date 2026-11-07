@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="scroll-mt-16 min-h-[100svh] flex flex-col justify-center items-center text-center px-6 pt-24 pb-20 w-full transition-colors duration-500 bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-black dark:to-gray-900"
+      className="scroll-mt-16 min-h-[100svh] flex flex-col justify-center items-center text-center px-6 pt-24 pb-20 w-full transition-colors duration-500 bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
     >
       <div className="relative z-10 text-center max-w-4xl">
         <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-sm font-medium text-emerald-700 dark:border-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300">

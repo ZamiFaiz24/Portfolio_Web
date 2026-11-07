@@ -38,7 +38,7 @@ export default function Sertifikat(props: CertificatesProps) {
   return (
     <section
       id="sertifikat"
-      className={`scroll-mt-16 w-full bg-gradient-to-br from-white via-blue-50 to-blue-100 dark:from-gray-900 dark:via-black dark:to-gray-900 py-16 px-6 transition-colors duration-500 ${className ?? ""}`}
+      className={`scroll-mt-16 w-full bg-gradient-to-br from-white via-blue-50 to-blue-100 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 py-16 px-6 transition-colors duration-500 ${className ?? ""}`}
       {...rest}
     >
       <div className="text-center mb-12">

@@ -4,7 +4,7 @@ import PageLayout from "../components/PageLayout";
 export default function NotFound() {
   return (
     <PageLayout>
-      <section className="min-h-[75vh] flex items-center justify-center px-6 pt-24 pb-16 bg-gradient-to-br from-white via-blue-50 to-blue-100 dark:from-gray-900 dark:via-black dark:to-gray-900 transition-colors duration-500">
+      <section className="min-h-[75vh] flex items-center justify-center px-6 pt-24 pb-16 bg-gradient-to-br from-white via-blue-50 to-blue-100 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 transition-colors duration-500">
         <div className="max-w-lg text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-blue-600 dark:text-cyan-400">
             404

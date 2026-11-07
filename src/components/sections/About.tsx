@@ -66,7 +66,7 @@ export default function About(props: AboutProps) {
   return (
     <section
       id="about"
-      className="scroll-mt-16 py-16 bg-gradient-to-br from-blue-100 via-blue-50 to-white dark:from-gray-900 dark:via-black dark:to-gray-900 transition-colors duration-500"
+      className="scroll-mt-16 py-16 bg-gradient-to-br from-blue-100 via-blue-50 to-white dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 transition-colors duration-500"
       {...props}
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">

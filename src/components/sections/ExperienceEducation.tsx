@@ -22,7 +22,7 @@ export default function ExperienceEducation() {
   return (
     <section
       id="experience"
-      className="scroll-mt-16 w-full bg-gradient-to-br from-white via-blue-50 to-blue-100 py-16 px-6 transition-colors duration-500 dark:from-gray-900 dark:via-black dark:to-gray-900"
+      className="scroll-mt-16 w-full bg-gradient-to-br from-white via-blue-50 to-blue-100 py-16 px-6 transition-colors duration-500 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
     >
       <div className="text-center mb-12">
         <h2 className="text-3xl font-extrabold text-blue-700 dark:text-cyan-400 border-b-4 border-blue-400 dark:border-cyan-500 inline-block w-fit">

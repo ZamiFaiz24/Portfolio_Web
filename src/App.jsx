@@ -9,6 +9,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 
 // Halaman utama
 import Navbar from "./components/common/Navbar";
+import SectionDivider from "./components/common/SectionDivider";
 import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
 import ExperienceEducation from "./components/sections/ExperienceEducation";
@@ -41,15 +42,22 @@ function HomePage() {
   }, [location.key, location.hash, location.state, location.pathname]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100 dark:from-gray-900 dark:via-black dark:to-gray-900 transition-colors duration-500">
+    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 transition-colors duration-500">
       <Navbar />
       <Hero />
+      <SectionDivider />
       <About />
+      <SectionDivider />
       <ExperienceEducation />
+      <SectionDivider />
       <Services />
+      <SectionDivider />
       <Portfolio />
+      <SectionDivider />
       <Sertifikat />
+      <SectionDivider />
       <Contact />
+      <SectionDivider />
       <Footer />
     </div>
   );
@@ -61,7 +69,7 @@ function App() {
       <Router>
         <Suspense
           fallback={
-            <div className="min-h-screen flex items-center justify-center bg-white text-gray-600 dark:bg-gray-900 dark:text-gray-300">
+            <div className="min-h-screen flex items-center justify-center bg-white text-gray-600 dark:bg-gray-950 dark:text-gray-300">
               Loading...
             </div>
           }

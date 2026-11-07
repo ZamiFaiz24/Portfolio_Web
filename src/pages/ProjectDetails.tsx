@@ -60,7 +60,7 @@ export default function ProjectDetails() {
 
   return (
     <PageLayout>
-      <section className="w-full bg-gradient-to-br from-white via-blue-50 to-blue-100 dark:from-gray-900 dark:via-black dark:to-gray-900 pt-24 pb-16 px-6 transition-colors duration-500">
+      <section className="w-full bg-gradient-to-br from-white via-blue-50 to-blue-100 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 pt-24 pb-16 px-6 transition-colors duration-500">
         <div className="max-w-6xl mx-auto">
           <button
             type="button"
