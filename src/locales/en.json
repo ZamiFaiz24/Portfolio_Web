@@ -1,0 +1,137 @@
+{
+  "common": {
+    "loading": "Loading..."
+  },
+  "navbar": {
+    "brand": "Faiz Zamzami",
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "services": "Services",
+    "projects": "Projects",
+    "certificates": "Certificates",
+    "contact": "Contact",
+    "downloadCv": "Download CV",
+    "menuOpen": "Open navigation menu",
+    "menuClose": "Close navigation menu",
+    "availability": "Fresh Graduate · Open to full-time"
+  },
+  "hero": {
+    "badge": "Fresh Graduate · Open to full-time",
+    "titlePrefix": "Hi, I am",
+    "name": "Faiz Zamzami",
+    "subtitle": "Junior Full Stack Developer",
+    "subtitleAltLaravel": "Laravel & React Developer",
+    "subtitleAltBackend": "Backend-Focused Full Stack",
+    "description": "I build end-to-end web applications with a backend focus — Laravel REST APIs, MySQL, and React/TypeScript frontends.",
+    "availabilityNote": "Open to backend or full-stack roles.",
+    "buttons": {
+      "downloadCv": "Download CV",
+      "viewProjects": "View Projects",
+      "contactMe": "Contact Me",
+      "scrollDown": "Scroll Down"
+    },
+    "scrollToAboutAria": "Scroll to About section"
+  },
+  "about": {
+    "heading": "About Me",
+    "role": "Junior Full Stack Developer",
+    "availability": "Open to full-time",
+    "info": {
+      "name": "Name",
+      "role": "Role",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "downloadCv": "Download CV",
+    "downloadCvAria": "Download Faiz Zamzami's CV",
+    "tabs": {
+      "profile": "Profile",
+      "skills": "Skills"
+    },
+    "paragraphs": {
+      "p1": "As a fresh graduate focused on full-stack development with a backend emphasis, I turn complex ideas into functional, secure, and reliable applications using Laravel, REST APIs, MySQL, and React.",
+      "p2": "My curiosity drives me to constantly experiment with new technologies, from designing robust APIs and managing data pipelines to building responsive interfaces with JavaScript and TypeScript.",
+      "p3": "I see the backend as the core engine of an application. I am now looking for a full-time junior full-stack role with a backend focus where I can keep learning, build impactful systems, and grow with a team."
+    },
+    "skillsIntro": "I work across backend and frontend technologies to build maintainable end-to-end web applications and reliable backend services."
+  },
+  "experience": {
+    "heading": "Experience & Education",
+    "subtitle": "Internship experience and academic background."
+  },
+  "services": {
+    "heading": "What I Can Do",
+    "subtitle": "How I can contribute to your team as a backend-focused full-stack developer."
+  },
+  "projects": {
+    "heading": "Projects",
+    "subtitle": "Selected projects — from backend APIs to full-stack applications.",
+    "viewDetails": "View details",
+    "liveDemo": "Live demo",
+    "github": "GitHub",
+    "private": "Private"
+  },
+  "certificates": {
+    "heading": "Certificates",
+    "subtitle": "Proof of my learning journey and achievements in technology.",
+    "viewCertificate": "View Certificate →"
+  },
+  "contact": {
+    "heading": "Contact Me",
+    "description": "I am currently open to full-time backend or full-stack opportunities. Send me a message and I will get back to you as soon as possible.",
+    "links": {
+      "emailMe": "Email me",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    },
+    "form": {
+      "name": "Your Name",
+      "namePlaceholder": "e.g. Budi Santoso",
+      "email": "Your Email",
+      "emailPlaceholder": "you@company.com",
+      "company": "Company / Position",
+      "companyOptional": "(optional)",
+      "companyPlaceholder": "e.g. PT Example — Backend / Full Stack Developer",
+      "message": "Your Message",
+      "messagePlaceholder": "Tell me about the role or project...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "preferEmail": "Prefer email?"
+    },
+    "notifications": {
+      "successTitle": "Success!",
+      "errorTitle": "Oops!",
+      "successMessage": "Message sent successfully!",
+      "errorMessage": "Failed to send message. Please try again or email me directly.",
+      "close": "Close"
+    }
+  },
+  "footer": {
+    "description": "Fresh graduate full-stack developer with a backend focus, building end-to-end web applications with Laravel, MySQL, React, and TypeScript.",
+    "availability": "Open to backend or full-stack roles",
+    "quickLinks": "Quick Links",
+    "connect": "Connect With Me",
+    "copyright": "Faiz Zamzami. All Rights Reserved.",
+    "backToTop": "Back to Top",
+    "backToTopAria": "Back to top"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "backHome": "Back to Home",
+    "viewProjects": "View Projects"
+  },
+  "projectDetails": {
+    "backToAllProjects": "Back to All Projects",
+    "keyFeatures": "Key Features",
+    "technologiesUsed": "Technologies Used",
+    "viewOnGithub": "View on GitHub",
+    "liveDemo": "Live Demo",
+    "notFoundTitle": "Project Not Found",
+    "notFoundDescription": "The project you are looking for does not exist.",
+    "backToHome": "Back to Home",
+    "confidential": "Confidential",
+    "private": "Private"
+  }
+}

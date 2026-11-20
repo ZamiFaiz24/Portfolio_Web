@@ -5,9 +5,12 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import App from './App.jsx'
+import { LocaleProvider } from './locales/LocaleProvider'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <LocaleProvider>
+      <App />
+    </LocaleProvider>
   </StrictMode>,
 )

@@ -1,0 +1,137 @@
+{
+  "common": {
+    "loading": "Memuat..."
+  },
+  "navbar": {
+    "brand": "Faiz Zamzami",
+    "home": "Beranda",
+    "about": "Tentang",
+    "experience": "Pengalaman",
+    "services": "Layanan",
+    "projects": "Proyek",
+    "certificates": "Sertifikat",
+    "contact": "Kontak",
+    "downloadCv": "Unduh CV",
+    "menuOpen": "Buka menu navigasi",
+    "menuClose": "Tutup menu navigasi",
+    "availability": "Lulusan Baru · Terbuka untuk penuh waktu"
+  },
+  "hero": {
+    "badge": "Lulusan Baru · Terbuka untuk penuh waktu",
+    "titlePrefix": "Hai, saya",
+    "name": "Faiz Zamzami",
+    "subtitle": "Pengembang Full Stack Junior",
+    "subtitleAltLaravel": "Pengembang Laravel & React",
+    "subtitleAltBackend": "Full Stack Berfokus Backend",
+    "description": "Saya membangun aplikasi web end-to-end dengan fokus backend — REST API Laravel, MySQL, dan frontend React/TypeScript.",
+    "availabilityNote": "Terbuka untuk peran backend atau full-stack.",
+    "buttons": {
+      "downloadCv": "Unduh CV",
+      "viewProjects": "Lihat Proyek",
+      "contactMe": "Hubungi Saya",
+      "scrollDown": "Gulir ke Bawah"
+    },
+    "scrollToAboutAria": "Gulir ke bagian Tentang"
+  },
+  "about": {
+    "heading": "Tentang Saya",
+    "role": "Pengembang Full Stack Junior",
+    "availability": "Terbuka untuk penuh waktu",
+    "info": {
+      "name": "Nama",
+      "role": "Peran",
+      "email": "Email",
+      "phone": "Telepon"
+    },
+    "downloadCv": "Unduh CV",
+    "downloadCvAria": "Unduh CV Faiz Zamzami",
+    "tabs": {
+      "profile": "Profil",
+      "skills": "Keahlian"
+    },
+    "paragraphs": {
+      "p1": "Sebagai lulusan baru yang berfokus pada pengembangan full-stack dengan penekanan backend, saya mengubah ide kompleks menjadi aplikasi yang fungsional, aman, dan andal menggunakan Laravel, REST API, MySQL, dan React.",
+      "p2": "Rasa ingin tahu saya mendorong saya untuk terus bereksperimen dengan teknologi baru, mulai dari merancang API yang andal dan mengelola alur data hingga membangun antarmuka responsif dengan JavaScript dan TypeScript.",
+      "p3": "Saya melihat backend sebagai mesin inti sebuah aplikasi. Saat ini saya mencari peran full-stack junior penuh waktu dengan fokus backend tempat saya dapat terus belajar, membangun sistem yang berdampak, dan berkembang bersama tim."
+    },
+    "skillsIntro": "Saya bekerja dengan teknologi backend dan frontend untuk membangun aplikasi web end-to-end yang mudah dipelihara serta layanan backend yang andal."
+  },
+  "experience": {
+    "heading": "Pengalaman & Pendidikan",
+    "subtitle": "Pengalaman magang dan latar belakang akademik."
+  },
+  "services": {
+    "heading": "Yang Bisa Saya Lakukan",
+    "subtitle": "Bagaimana saya dapat berkontribusi pada tim Anda sebagai pengembang full-stack yang berfokus pada backend."
+  },
+  "projects": {
+    "heading": "Proyek",
+    "subtitle": "Proyek pilihan — dari API backend hingga aplikasi full-stack.",
+    "viewDetails": "Lihat detail",
+    "liveDemo": "Demo langsung",
+    "github": "GitHub",
+    "private": "Privat"
+  },
+  "certificates": {
+    "heading": "Sertifikat",
+    "subtitle": "Bukti perjalanan belajar dan pencapaian saya di bidang teknologi.",
+    "viewCertificate": "Lihat Sertifikat →"
+  },
+  "contact": {
+    "heading": "Hubungi Saya",
+    "description": "Saat ini saya terbuka untuk peluang backend atau full-stack penuh waktu. Kirimkan pesan dan saya akan membalas secepat mungkin.",
+    "links": {
+      "emailMe": "Email saya",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    },
+    "form": {
+      "name": "Nama Anda",
+      "namePlaceholder": "mis. Budi Santoso",
+      "email": "Email Anda",
+      "emailPlaceholder": "anda@perusahaan.com",
+      "company": "Perusahaan / Posisi",
+      "companyOptional": "(opsional)",
+      "companyPlaceholder": "mis. PT Contoh — Backend / Full Stack Developer",
+      "message": "Pesan Anda",
+      "messagePlaceholder": "Ceritakan tentang peran atau proyek...",
+      "submit": "Kirim Pesan",
+      "sending": "Mengirim...",
+      "preferEmail": "Lebih suka email?"
+    },
+    "notifications": {
+      "successTitle": "Berhasil!",
+      "errorTitle": "Ups!",
+      "successMessage": "Pesan berhasil dikirim!",
+      "errorMessage": "Gagal mengirim pesan. Silakan coba lagi atau email saya langsung.",
+      "close": "Tutup"
+    }
+  },
+  "footer": {
+    "description": "Pengembang full-stack lulusan baru dengan fokus backend, membangun aplikasi web end-to-end dengan Laravel, MySQL, React, dan TypeScript.",
+    "availability": "Terbuka untuk peran backend atau full-stack",
+    "quickLinks": "Tautan Cepat",
+    "connect": "Terhubung dengan Saya",
+    "copyright": "Faiz Zamzami. Hak Cipta Dilindungi.",
+    "backToTop": "Kembali ke Atas",
+    "backToTopAria": "Kembali ke atas"
+  },
+  "notFound": {
+    "title": "Halaman tidak ditemukan",
+    "description": "Halaman yang Anda cari tidak ada atau telah dipindahkan.",
+    "backHome": "Kembali ke Beranda",
+    "viewProjects": "Lihat Proyek"
+  },
+  "projectDetails": {
+    "backToAllProjects": "Kembali ke Semua Proyek",
+    "keyFeatures": "Fitur Utama",
+    "technologiesUsed": "Teknologi yang Digunakan",
+    "viewOnGithub": "Lihat di GitHub",
+    "liveDemo": "Demo Langsung",
+    "notFoundTitle": "Proyek Tidak Ditemukan",
+    "notFoundDescription": "Proyek yang Anda cari tidak ada.",
+    "backToHome": "Kembali ke Beranda",
+    "confidential": "Rahasia",
+    "private": "Privat"
+  }
+}
