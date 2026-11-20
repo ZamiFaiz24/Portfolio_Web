@@ -68,7 +68,29 @@
   },
   "experience": {
     "heading": "Pengalaman & Pendidikan",
-    "subtitle": "Pengalaman magang dan latar belakang akademik."
+    "subtitle": "Pengalaman magang dan latar belakang akademik.",
+    "internshipBadge": "Magang",
+    "internshipTitle": "Magang Backend Developer",
+    "internshipCompany": "BPS Kabupaten Kebumen",
+    "internshipPeriod": "Sep 2025 – Jan 2026",
+    "internshipLocation": "Kebumen, Jawa Tengah",
+    "points": {
+      "p1": "Membangun REST API Laravel untuk SiLawet.",
+      "p2": "Mengintegrasikan data Web API BPS ke MySQL.",
+      "p3": "Mengembangkan dashboard pengelolaan data."
+    },
+    "educationBadge": "Lulusan Baru",
+    "educationDegree": "S1 Sains Data",
+    "educationUniversity": "Universitas Putra Bangsa Kebumen",
+    "educationFaculty": "Fakultas Sains dan Teknologi",
+    "educationPeriod": "2022 – 2026",
+    "educationLocation": "Kebumen, Jawa Tengah"
+  },
+  "education": {
+    "points": {
+      "p1": "Tesis: SapiDoc — sistem pakar diagnosa penyakit sapi menggunakan Forward Chaining dan Certainty Factor.",
+      "p2": "Capstone: Dashboard monitoring IoT STECI."
+    }
   },
   "services": {
     "heading": "Yang Bisa Saya Lakukan",
@@ -138,9 +160,23 @@
     "availability": "Terbuka untuk peran backend atau full-stack",
     "quickLinks": "Tautan Cepat",
     "connect": "Terhubung dengan Saya",
-    "copyright": "Faiz Zamzami. Hak Cipta Dilindungi.",
+    "allRightsReserved": "Hak Cipta Dilindungi.",
     "backToTop": "Kembali ke Atas",
-    "backToTopAria": "Kembali ke atas"
+    "backToTopAria": "Kembali ke atas",
+    "navAria": "Navigasi footer",
+    "nav": {
+      "about": "Tentang",
+      "experience": "Pengalaman",
+      "services": "Layanan",
+      "projects": "Proyek",
+      "certificates": "Sertifikat",
+      "contact": "Kontak"
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
   },
   "notFound": {
     "title": "Halaman tidak ditemukan",

@@ -68,7 +68,29 @@
   },
   "experience": {
     "heading": "Experience & Education",
-    "subtitle": "Internship experience and academic background."
+    "subtitle": "Internship experience and academic background.",
+    "internshipBadge": "Internship",
+    "internshipTitle": "Backend Developer Intern",
+    "internshipCompany": "BPS Kabupaten Kebumen",
+    "internshipPeriod": "Sep 2025 – Jan 2026",
+    "internshipLocation": "Kebumen, Central Java",
+    "points": {
+      "p1": "Built a Laravel REST API for SiLawet.",
+      "p2": "Integrated BPS Web API data into MySQL.",
+      "p3": "Developed an admin dashboard for data management."
+    },
+    "educationBadge": "Fresh Graduate",
+    "educationDegree": "S1 Sains Data",
+    "educationUniversity": "Universitas Putra Bangsa Kebumen",
+    "educationFaculty": "Fakultas Sains dan Teknologi",
+    "educationPeriod": "2022 – 2026",
+    "educationLocation": "Kebumen, Central Java"
+  },
+  "education": {
+    "points": {
+      "p1": "Thesis: SapiDoc — cattle disease expert system using Forward Chaining and Certainty Factor.",
+      "p2": "Capstone: STECI IoT monitoring dashboard."
+    }
   },
   "services": {
     "heading": "What I Can Do",
@@ -138,9 +160,23 @@
     "availability": "Open to backend or full-stack roles",
     "quickLinks": "Quick Links",
     "connect": "Connect With Me",
-    "copyright": "Faiz Zamzami. All Rights Reserved.",
+    "allRightsReserved": "All Rights Reserved.",
     "backToTop": "Back to Top",
-    "backToTopAria": "Back to top"
+    "backToTopAria": "Back to top",
+    "navAria": "Footer navigation",
+    "nav": {
+      "about": "About",
+      "experience": "Experience",
+      "services": "Services",
+      "projects": "Projects",
+      "certificates": "Certificates",
+      "contact": "Contact"
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
   },
   "notFound": {
     "title": "Page not found",

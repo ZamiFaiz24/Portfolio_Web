@@ -6,19 +6,21 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useTranslation } from "@/locales";
 
-const experiencePoints = [
-  "Built a Laravel REST API for SiLawet.",
-  "Integrated BPS Web API data into MySQL.",
-  "Developed an admin dashboard for data management.",
-];
+const experiencePointsKeys = ["p1", "p2", "p3"] as const;
 
-const educationPoints = [
-  "Thesis: SapiDoc — cattle disease expert system using Forward Chaining and Certainty Factor.",
-  "Capstone: STECI IoT monitoring dashboard.",
-];
+const educationPointsKeys = ["p1", "p2"] as const;
 
 export default function ExperienceEducation() {
+  const { t } = useTranslation();
+  const experiencePoints = experiencePointsKeys.map((key) =>
+    t(`experience.points.${key}`)
+  );
+  const educationPoints = educationPointsKeys.map((key) =>
+    t(`education.points.${key}`)
+  );
+
   return (
     <section
       id="experience"
@@ -26,10 +28,10 @@ export default function ExperienceEducation() {
     >
       <div className="text-center mb-12">
         <h2 className="text-3xl font-extrabold text-blue-700 dark:text-cyan-400 border-b-4 border-blue-400 dark:border-cyan-500 inline-block w-fit">
-          Experience &amp; Education
+          {t("experience.heading")}
         </h2>
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-          Internship experience and academic background.
+          {t("experience.subtitle")}
         </p>
       </div>
 
@@ -46,23 +48,27 @@ export default function ExperienceEducation() {
               <FaBriefcase />
             </span>
             <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700 dark:bg-cyan-900/40 dark:text-cyan-300">
-              Internship
+              {t("experience.internshipBadge")}
             </span>
           </div>
 
           <h3 className="text-xl font-bold text-gray-800 dark:text-white">
-            Backend Developer Intern
+            {t("experience.internshipTitle")}
           </h3>
           <p className="mt-1 font-semibold text-blue-700 dark:text-cyan-400">
-            BPS Kabupaten Kebumen
+            {t("experience.internshipCompany")}
           </p>
 
           <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
             <span className="inline-flex items-center gap-2">
-              <FaCalendarAlt className="text-xs" /> Sep 2025 – Jan 2026
+              <FaCalendarAlt className="text-xs" /> {t(
+                "experience.internshipPeriod"
+              )}
             </span>
             <span className="inline-flex items-center gap-2">
-              <FaMapMarkerAlt className="text-xs" /> Kebumen, Central Java
+              <FaMapMarkerAlt className="text-xs" /> {t(
+                "experience.internshipLocation"
+              )}
             </span>
           </div>
 
@@ -99,26 +105,30 @@ export default function ExperienceEducation() {
               <FaGraduationCap />
             </span>
             <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
-              Fresh Graduate
+              {t("experience.educationBadge")}
             </span>
           </div>
 
           <h3 className="text-xl font-bold text-gray-800 dark:text-white">
-            S1 Sains Data
+            {t("experience.educationDegree")}
           </h3>
           <p className="mt-1 font-semibold text-blue-700 dark:text-cyan-400">
-            Universitas Putra Bangsa Kebumen
+            {t("experience.educationUniversity")}
           </p>
           <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-            Fakultas Sains dan Teknologi
+            {t("experience.educationFaculty")}
           </p>
 
           <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
             <span className="inline-flex items-center gap-2">
-              <FaCalendarAlt className="text-xs" /> 2022 – 2026
+              <FaCalendarAlt className="text-xs" /> {t(
+                "experience.educationPeriod"
+              )}
             </span>
             <span className="inline-flex items-center gap-2">
-              <FaMapMarkerAlt className="text-xs" /> Kebumen, Central Java
+              <FaMapMarkerAlt className="text-xs" /> {t(
+                "experience.educationLocation"
+              )}
             </span>
           </div>
 

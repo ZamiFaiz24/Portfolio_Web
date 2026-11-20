@@ -1,36 +1,38 @@
 // src/components/common/Footer.tsx
 
 import { Link } from "react-router-dom";
+import { useTranslation } from "@/locales";
 import { FaGithub, FaLinkedin, FaEnvelope, FaArrowUp } from "react-icons/fa";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const navLinks = [
-    { to: "/#about", label: "About" },
-    { to: "/#experience", label: "Experience" },
-    { to: "/#service", label: "Services" },
-    { to: "/#projects", label: "Projects" },
-    { to: "/#sertifikat", label: "Certificates" },
-    { to: "/#contact", label: "Contact" },
+    { to: "/#about", labelKey: "footer.nav.about" },
+    { to: "/#experience", labelKey: "footer.nav.experience" },
+    { to: "/#service", labelKey: "footer.nav.services" },
+    { to: "/#projects", labelKey: "footer.nav.projects" },
+    { to: "/#certificates", labelKey: "footer.nav.certificates" },
+    { to: "/#contact", labelKey: "footer.nav.contact" },
   ];
 
   const socialLinks = [
     {
       href: "https://github.com/ZamiFaiz24",
-      label: "GitHub",
+      labelKey: "footer.social.github",
       icon: <FaGithub />,
     },
     {
       href: "https://www.linkedin.com/in/faiz-zamzami-1189492ab/",
-      label: "LinkedIn",
+      labelKey: "footer.social.linkedin",
       icon: <FaLinkedin />,
     },
     {
       href: "mailto:faizzamzami10p@gmail.com",
-      label: "Email",
+      labelKey: "footer.social.email",
       icon: <FaEnvelope />,
     },
   ];
@@ -40,20 +42,20 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto py-12 px-6">
         <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
           <div>
-            <h3 className="text-xl font-bold text-white">Faiz Zamzami</h3>
+            <h3 className="text-xl font-bold text-white">{t("hero.name")}</h3>
             <p className="mt-2 text-gray-300 text-sm leading-relaxed">
-              Fresh graduate full-stack developer with a backend focus, building
-              end-to-end web applications with Laravel, MySQL, React, and
-              TypeScript.
+              {t("footer.description")}
             </p>
             <p className="mt-2 text-sm font-medium text-emerald-300">
-              Open to backend or full-stack roles
+              {t("footer.availability")}
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold text-gray-100 mb-3">Quick Links</h4>
-            <nav aria-label="Footer navigation">
+            <h4 className="font-semibold text-gray-100 mb-3">
+              {t("footer.quickLinks")}
+            </h4>
+            <nav aria-label={t("footer.navAria")}>
               <ul className="space-y-2">
                 {navLinks.map((link) => (
                   <li key={link.to}>
@@ -61,7 +63,7 @@ const Footer = () => {
                       to={link.to}
                       className="text-gray-300 hover:text-cyan-400 transition-colors"
                     >
-                      {link.label}
+                      {t(link.labelKey)}
                     </Link>
                   </li>
                 ))}
@@ -70,15 +72,17 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold text-gray-100 mb-3">Connect With Me</h4>
+            <h4 className="font-semibold text-gray-100 mb-3">
+              {t("footer.connect")}
+            </h4>
             <div className="flex justify-center md:justify-start gap-6">
               {socialLinks.map((link) => (
                 <a
-                  key={link.label}
+                  key={link.labelKey}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={link.label}
+                  aria-label={t(link.labelKey)}
                   className="text-gray-300 hover:text-cyan-400 transition-all duration-300 transform hover:scale-110"
                 >
                   <span className="text-2xl">{link.icon}</span>
@@ -90,16 +94,17 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-gray-700/60 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} Faiz Zamzami. All Rights Reserved.
+            &copy; {new Date().getFullYear()} {t("hero.name")}.{" "}
+            {t("footer.allRightsReserved")}
           </p>
 
           <button
             type="button"
             onClick={scrollToTop}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
-            aria-label="Back to top"
+            aria-label={t("footer.backToTopAria")}
           >
-            <FaArrowUp className="text-lg" /> Back to Top
+            <FaArrowUp className="text-lg" /> {t("footer.backToTop")}
           </button>
         </div>
       </div>

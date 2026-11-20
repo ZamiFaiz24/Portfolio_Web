@@ -14,6 +14,7 @@ import {
 import { SiMysql, SiPostman } from "react-icons/si";
 import React, { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import { useTranslation } from "@/locales";
 
 // --- Framer Motion Variants ---
 const sectionVariant: Variants = {
@@ -61,6 +62,7 @@ const skillsData = [
 ];
 
 export default function About(props: AboutProps) {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<ActiveTab>("profile");
 
   return (
@@ -82,32 +84,32 @@ export default function About(props: AboutProps) {
           </div>
 
           <h3 className="text-2xl font-extrabold text-blue-700 dark:text-cyan-400">
-            Faiz Zamzami
+            {t("hero.name")}
           </h3>
           <p className="text-gray-600 dark:text-gray-400 text-sm">
-            Junior Full Stack Developer
+            {t("about.role")}
           </p>
           <span className="mt-2 mb-4 inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-            Open to full-time
+            {t("about.availability")}
           </span>
 
           <div className="mt-2 space-y-2 text-sm text-gray-700 dark:text-gray-300 w-full text-left">
-            <InfoItem icon={<FaUser />} label="Name" value="Faiz Zamzami" />
+            <InfoItem icon={<FaUser />} label={t("about.info.name")} value={t("hero.name")} />
             <InfoItem
               icon={<FaCode />}
-              label="Role"
-              value="Junior Full Stack Developer"
+              label={t("about.info.role")}
+              value={t("about.role")}
             />
             <InfoItem
               icon={<FaEnvelope />}
-              label="Email"
+              label={t("about.info.email")}
               value="faizzamzami10p@gmail.com"
               href="mailto:faizzamzami10p@gmail.com"
             />
             <InfoItem
               icon={<FaPhone />}
-              label="Phone"
+              label={t("about.info.phone")}
               value="(+62) 838-6106-5430"
               href="tel:+6283861065430"
             />
@@ -116,26 +118,26 @@ export default function About(props: AboutProps) {
           <a
             href="/files/FAIZ_ZAMZAMI_Full_New.pdf"
             download="Faiz_Zamzami_CV.pdf"
-            aria-label="Download Faiz Zamzami's CV"
+            aria-label={t("about.downloadCvAria")}
             className="mt-6 inline-flex items-center gap-2 px-6 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 active:scale-95"
           >
-            <FaDownload className="text-lg" /> Download CV
+            <FaDownload className="text-lg" /> {t("about.downloadCv")}
           </a>
         </div>
 
         <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border border-blue-100 dark:border-gray-700 shadow-xl rounded-2xl p-6 sm:p-8 md:col-span-2">
           <h2 className="text-3xl font-extrabold text-blue-700 dark:text-cyan-400 border-b-4 border-blue-400 dark:border-cyan-500 inline-block pb-1 mb-6">
-            About Me
+            {t("about.heading")}
           </h2>
 
           <div className="flex space-x-2 md:space-x-4 mb-6 border-b border-transparent">
             <TabButton
-              label="Profile"
+              label={t("about.tabs.profile")}
               activeTab={activeTab}
               onClick={() => setActiveTab("profile")}
             />
             <TabButton
-              label="Skills"
+              label={t("about.tabs.skills")}
               activeTab={activeTab}
               onClick={() => setActiveTab("skills")}
             />
@@ -158,22 +160,13 @@ export default function About(props: AboutProps) {
                     className="max-w-prose space-y-5 text-base leading-7 text-gray-700 dark:text-gray-300"
                   >
                     <motion.p variants={listItemVariant}>
-                      As a fresh graduate focused on full-stack development with
-                      a backend emphasis, I turn complex ideas into functional,
-                      secure, and reliable applications using Laravel, REST APIs,
-                      MySQL, and React.
+                      {t("about.paragraphs.p1")}
                     </motion.p>
                     <motion.p variants={listItemVariant}>
-                      My curiosity drives me to constantly experiment with new
-                      technologies, from designing robust APIs and managing data
-                      pipelines to building responsive interfaces with JavaScript
-                      and TypeScript.
+                      {t("about.paragraphs.p2")}
                     </motion.p>
                     <motion.p variants={listItemVariant}>
-                      I see the backend as the core engine of an application. I am
-                      now looking for a full-time junior full-stack role with a
-                      backend focus where I can keep learning, build impactful
-                      systems, and grow with a team.
+                      {t("about.paragraphs.p3")}
                     </motion.p>
                   </motion.div>
                 </motion.div>
@@ -191,9 +184,7 @@ export default function About(props: AboutProps) {
                     variants={listItemVariant}
                     className="mb-6 max-w-prose text-base leading-7 text-gray-700 dark:text-gray-300"
                   >
-                    I work across backend and frontend technologies to build
-                    maintainable end-to-end web applications and reliable backend
-                    services.
+                    {t("about.skillsIntro")}
                   </motion.p>
 
                   <motion.div

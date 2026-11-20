@@ -1,8 +1,10 @@
 import { FaArrowDown, FaDownload } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
 import { scrollToSection } from "@/utils/scrollToSection";
+import { useTranslation } from "@/locales";
 
 export default function Hero() {
+  const { t } = useTranslation();
   const scrollToProjects = () => {
     scrollToSection("projects");
   };
@@ -15,20 +17,20 @@ export default function Hero() {
       <div className="relative z-10 text-center max-w-4xl">
         <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-sm font-medium text-emerald-700 dark:border-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300">
           <span className="h-2 w-2 rounded-full bg-emerald-500" />
-          Fresh Graduate · Open to full-time
+          {t("hero.badge")}
         </span>
 
         <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-          Hi, I am{" "}
-          <span className="text-blue-700 dark:text-cyan-400">Faiz Zamzami</span>
+          {t("hero.titlePrefix")}{" "}
+          <span className="text-blue-700 dark:text-cyan-400">{t("hero.name")}</span>
         </h1>
 
         <h2 className="text-xl md:text-2xl mt-4 font-semibold text-slate-700 dark:text-gray-200">
           <Typewriter
             words={[
-              "Junior Full Stack Developer",
-              "Laravel & React Developer",
-              "Backend-Focused Full Stack",
+              t("hero.subtitle"),
+              t("hero.subtitleAltLaravel"),
+              t("hero.subtitleAltBackend"),
             ]}
             loop={true}
             cursor
@@ -40,12 +42,11 @@ export default function Hero() {
         </h2>
 
         <p className="mt-6 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          I build end-to-end web applications with a backend focus — Laravel
-          REST APIs, MySQL, and React/TypeScript frontends.
+          {t("hero.description")}
         </p>
 
         <p className="mt-3 text-sm font-medium text-gray-500 dark:text-gray-400">
-          Open to backend or full-stack roles.
+          {t("hero.availabilityNote")}
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
@@ -54,7 +55,7 @@ export default function Hero() {
             download="Faiz_Zamzami_CV.pdf"
             className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg hover:shadow-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
           >
-            <FaDownload /> Download CV
+            <FaDownload /> {t("hero.buttons.downloadCv")}
           </a>
 
           <button
@@ -62,7 +63,7 @@ export default function Hero() {
             onClick={scrollToProjects}
             className="px-8 py-3 rounded-lg font-semibold bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-blue-600 dark:text-cyan-400 border-2 border-blue-600 dark:border-cyan-400 shadow-md hover:shadow-lg hover:bg-white dark:hover:bg-gray-700 transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
           >
-            View Projects
+            {t("hero.buttons.viewProjects")}
           </button>
 
           <a
@@ -73,7 +74,7 @@ export default function Hero() {
             }}
             className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-gray-700 dark:text-gray-200 hover:text-blue-700 dark:hover:text-cyan-400 hover:bg-white/70 dark:hover:bg-gray-800/70 transition-all duration-300"
           >
-            Contact Me
+            {t("hero.buttons.contactMe")}
           </a>
         </div>
       </div>
@@ -86,9 +87,11 @@ export default function Hero() {
             scrollToSection("about");
           }}
           className="flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-cyan-400 transition group cursor-pointer"
-          aria-label="Scroll to About section"
+          aria-label={t("hero.scrollToAboutAria")}
         >
-          <span className="text-sm font-semibold mb-1">Scroll Down</span>
+          <span className="text-sm font-semibold mb-1">
+            {t("hero.buttons.scrollDown")}
+          </span>
           <FaArrowDown className="animate-bounce" />
         </a>
       </div>
