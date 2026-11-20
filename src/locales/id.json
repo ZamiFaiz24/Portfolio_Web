@@ -14,7 +14,9 @@
     "downloadCv": "Unduh CV",
     "menuOpen": "Buka menu navigasi",
     "menuClose": "Tutup menu navigasi",
-    "availability": "Lulusan Baru · Terbuka untuk penuh waktu"
+    "availability": "Lulusan Baru · Terbuka untuk penuh waktu",
+    "languageSwitcher": "Pilih bahasa",
+    "mainNavigation": "Navigasi utama"
   },
   "hero": {
     "badge": "Lulusan Baru · Terbuka untuk penuh waktu",

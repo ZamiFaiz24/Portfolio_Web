@@ -14,7 +14,9 @@
     "downloadCv": "Download CV",
     "menuOpen": "Open navigation menu",
     "menuClose": "Close navigation menu",
-    "availability": "Fresh Graduate · Open to full-time"
+    "availability": "Fresh Graduate · Open to full-time",
+    "languageSwitcher": "Select language",
+    "mainNavigation": "Main navigation"
   },
   "hero": {
     "badge": "Fresh Graduate · Open to full-time",
