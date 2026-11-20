@@ -7,17 +7,18 @@ import {
   FaArrowLeft,
   FaLock,
 } from "react-icons/fa";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import PageLayout from "../components/PageLayout";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { projects } from "../data/projects";
+import { useTranslation } from "@/locales";
 
 const DEFAULT_TITLE = "Faiz Zamzami - Junior Full Stack Developer Portfolio";
 
 export default function ProjectDetails() {
   const { id } = useParams();
-  const navigate = useNavigate();
+  const { t } = useTranslation();
   const project = projects.find((item) => item.id === id);
 
   // Scroll to the top when a project detail page is opened.
@@ -26,27 +27,31 @@ export default function ProjectDetails() {
   }, [id]);
 
   useEffect(() => {
-    document.title = project ? `${project.title} | Faiz Zamzami` : `Project Not Found | Faiz Zamzami`;
+    document.title = project
+      ? `${project.title} | Faiz Zamzami`
+      : `${t("projectDetails.notFoundTitle")} | Faiz Zamzami`;
 
     return () => {
       document.title = DEFAULT_TITLE;
     };
-  }, [project]);
+  }, [project, t]);
 
   if (!project) {
     return (
       <PageLayout>
         <div className="min-h-[70vh] flex items-center justify-center text-center px-6 pt-24">
           <div>
-            <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">Project Not Found</h2>
+            <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">
+              {t("projectDetails.notFoundTitle")}
+            </h2>
             <p className="text-gray-500 dark:text-gray-400 mt-2">
-              The project you are looking for does not exist.
+              {t("projectDetails.notFoundDescription")}
             </p>
             <Link
               to="/"
               className="mt-6 inline-block px-6 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
             >
-              Back to Home
+              {t("projectDetails.backToHome")}
             </Link>
           </div>
         </div>
@@ -54,23 +59,18 @@ export default function ProjectDetails() {
     );
   }
 
-  const handleBack = () => {
-    navigate("/", { state: { scrollTo: "projects" } });
-  };
-
   return (
     <PageLayout>
       <section className="w-full bg-gradient-to-br from-white via-blue-50 to-blue-100 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 pt-24 pb-16 px-6 transition-colors duration-500">
         <div className="max-w-6xl mx-auto">
-          <button
-            type="button"
-            onClick={handleBack}
+          <Link
+            to="/projects"
             className="flex items-center gap-2 mb-8 text-blue-600 dark:text-cyan-400 font-semibold hover:underline"
-            aria-label="Back to all projects"
+            aria-label={t("projectDetails.backToAllProjects")}
           >
             <FaArrowLeft />
-            Back to All Projects
-          </button>
+            {t("projectDetails.backToAllProjects")}
+          </Link>
 
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="rounded-2xl overflow-hidden shadow-2xl md:sticky md:top-24">
@@ -131,7 +131,7 @@ export default function ProjectDetails() {
 
               <div className="mb-8">
                 <h3 className="text-xl font-bold text-blue-600 dark:text-cyan-500 mb-3 flex items-center gap-2">
-                  <FaCogs /> Technologies Used
+                  <FaCogs /> {t("projectDetails.technologiesUsed")}
                 </h3>
                 <div className="flex gap-2 flex-wrap">
                   {project.tech.map((tech) => (
@@ -161,7 +161,7 @@ export default function ProjectDetails() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white text-sm hover:bg-black transition shadow-lg"
                     >
-                      <FaGithub /> View on GitHub
+                      <FaGithub /> {t("projectDetails.viewOnGithub")}
                     </a>
                   )}
                   {project.demo && (
@@ -171,7 +171,7 @@ export default function ProjectDetails() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-4 py-2 rounded-lg bg-green-600 text-white text-sm hover:bg-green-700 transition shadow-lg"
                     >
-                      <FaExternalLinkAlt /> Live Demo
+                      <FaExternalLinkAlt /> {t("projectDetails.liveDemo")}
                     </a>
                   )}
                 </div>
