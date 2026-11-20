@@ -1,6 +1,7 @@
 {
   "common": {
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "backHome": "Back to home"
   },
   "navbar": {
     "brand": "Faiz Zamzami",
@@ -82,10 +83,24 @@
     "private": "Private",
     "viewAll": "View all projects"
   },
+  "projectsPage": {
+    "heading": "Projects",
+    "subtitle": "All projects — backend APIs, full-stack applications, and personal builds.",
+    "filterLabel": "Filter projects by category",
+    "filters": {
+      "all": "All",
+      "backend": "Backend",
+      "fullStack": "Full Stack"
+    },
+    "empty": "No projects in this category."
+  },
   "certificates": {
     "heading": "Certificates",
     "subtitle": "Proof of my learning journey and achievements in technology.",
     "viewCertificate": "View Certificate →"
+  },
+  "certificatesPage": {
+    "dateUnavailable": "Date not listed"
   },
   "contact": {
     "heading": "Contact Me",

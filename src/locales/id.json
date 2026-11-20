@@ -1,6 +1,7 @@
 {
   "common": {
-    "loading": "Memuat..."
+    "loading": "Memuat...",
+    "backHome": "Kembali ke beranda"
   },
   "navbar": {
     "brand": "Faiz Zamzami",
@@ -82,10 +83,24 @@
     "private": "Privat",
     "viewAll": "Lihat semua proyek"
   },
+  "projectsPage": {
+    "heading": "Proyek",
+    "subtitle": "Semua proyek — API backend, aplikasi full-stack, dan proyek pribadi.",
+    "filterLabel": "Filter proyek berdasarkan kategori",
+    "filters": {
+      "all": "Semua",
+      "backend": "Backend",
+      "fullStack": "Full Stack"
+    },
+    "empty": "Tidak ada proyek dalam kategori ini."
+  },
   "certificates": {
     "heading": "Sertifikat",
     "subtitle": "Bukti perjalanan belajar dan pencapaian saya di bidang teknologi.",
     "viewCertificate": "Lihat Sertifikat →"
+  },
+  "certificatesPage": {
+    "dateUnavailable": "Tanggal tidak tercantum"
   },
   "contact": {
     "heading": "Hubungi Saya",

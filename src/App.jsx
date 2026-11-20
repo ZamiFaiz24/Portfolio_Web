@@ -19,6 +19,8 @@ import Footer from "./components/common/Footer";
 
 // Halaman project detail dan 404 (dimuat terpisah agar halaman utama lebih ringan)
 const ProjectDetails = lazy(() => import("./pages/ProjectDetails"));
+const Projects = lazy(() => import("./pages/Projects"));
+const Certificates = lazy(() => import("./pages/Certificates"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 import { scrollToSection } from "./utils/scrollToSection";
@@ -72,7 +74,9 @@ function App() {
       >
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetails />} />
+          <Route path="/certificates" element={<Certificates />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
