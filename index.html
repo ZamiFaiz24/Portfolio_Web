@@ -69,24 +69,12 @@
       content="https://faiz-zamzami.netlify.app/images/og-image.png"
     />
 
-    <script>
-      (function () {
-        try {
-          var storedTheme = localStorage.getItem("theme");
-          var isDark =
-            storedTheme === "dark" ||
-            (storedTheme !== "light" &&
-              window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-          document.documentElement.classList.add(isDark ? "dark" : "light");
-          document.documentElement.style.colorScheme = isDark
-            ? "dark"
-            : "light";
-        } catch (error) {
-          // The app will apply the system theme after mounting.
-        }
-      })();
-    </script>
+    <!-- Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "TOKEN_PLACEHOLDER"}'
+    ></script>
 
     <!-- JSON-LD Schema for Rich Snippets -->
     <script type="application/ld+json">
