@@ -5,7 +5,6 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import { ThemeProvider } from "./context/ThemeContext";
 
 // Halaman utama
 import Navbar from "./components/common/Navbar";
@@ -65,23 +64,21 @@ function HomePage() {
 
 function App() {
   return (
-    <ThemeProvider>
-      <Router>
-        <Suspense
-          fallback={
-            <div className="min-h-screen flex items-center justify-center bg-white text-gray-600 dark:bg-gray-950 dark:text-gray-300">
-              Loading...
-            </div>
-          }
-        >
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/projects/:id" element={<ProjectDetails />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </Router>
-    </ThemeProvider>
+    <Router>
+      <Suspense
+        fallback={
+          <div className="min-h-screen flex items-center justify-center bg-white text-gray-600 dark:bg-gray-950 dark:text-gray-300">
+            Loading...
+          </div>
+        }
+      >
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/projects/:id" element={<ProjectDetails />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+    </Router>
   );
 }
 

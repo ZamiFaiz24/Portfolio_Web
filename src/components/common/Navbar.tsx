@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaBars, FaDownload, FaTimes } from "react-icons/fa";
-import ThemeToggle from "./ThemeToggle";
 import { scrollToSection } from "@/utils/scrollToSection";
 
 const NAV_ITEMS = [
@@ -123,8 +122,6 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-6">
               {NAV_ITEMS.map((item) => desktopLink(item.id, item.label))}
             </div>
-
-            <ThemeToggle />
 
             <button
               type="button"
