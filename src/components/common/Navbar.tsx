@@ -15,12 +15,6 @@ const NAV_ITEMS = [
     hash: "experience",
   },
   {
-    id: "services",
-    labelKey: "navbar.services",
-    type: "hash",
-    hash: "services",
-  },
-  {
     id: "projects",
     labelKey: "navbar.projects",
     type: "route",

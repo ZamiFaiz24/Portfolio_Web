@@ -4,6 +4,7 @@ export type Project = {
   desc: string;
   img: string;
   category: string;
+  featured: boolean;
   tech: string[];
   subinfo: string;
   period?: string;
@@ -23,6 +24,7 @@ export const projects: Project[] = [
     desc: "A Laravel backend built during a BPS internship, including a REST API for SiLawet and BPS Web API integration into MySQL.",
     img: "/images/project/bps/Data%20Manajement.png",
     category: "Backend",
+    featured: true,
     tech: ["Laravel", "MySQL", "REST API"],
     subinfo: "Internship Project · Backend System",
     period: "Sep 2025 – Jan 2026",
@@ -49,6 +51,7 @@ The work included a Laravel REST API for SiLawet, integration of BPS Web API dat
     desc: "A thesis project: a web-based expert system for diagnosing cattle diseases using Forward Chaining and Certainty Factor methods.",
     img: "/images/project/SapiDoc/SapiDoc.png",
     category: "Full Stack",
+    featured: true,
     tech: ["Laravel", "React", "TypeScript", "MySQL", "Tailwind CSS"],
     subinfo: "Thesis Project · Full Stack Expert System",
     period: "Apr – Jul 2026",
@@ -76,6 +79,7 @@ The system applies Forward Chaining and Certainty Factor methods to produce a di
     desc: "A web dashboard for monitoring STECI IoT measurement results as part of a capstone project.",
     img: "/images/project/steci/IoT%20Monitoring.png",
     category: "Full Stack",
+    featured: true,
     tech: ["Laravel", "Vue", "MySQL", "REST API"],
     subinfo: "Capstone Project · IoT Dashboard",
     period: "Apr – Jul 2025",
@@ -101,6 +105,7 @@ The dashboard presents sensor data and results in a readable interface so users 
     desc: "A personal full-stack project for organizing and tracking daily activities.",
     img: "/images/project/My_ToDo/Task%20Manajement.png",
     category: "Full Stack",
+    featured: false,
     tech: ["Laravel", "React", "Tailwind CSS"],
     subinfo: "Personal Project · Full Stack Application",
     screenshots: [

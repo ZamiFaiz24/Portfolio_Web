@@ -12,10 +12,9 @@ import SectionDivider from "./components/common/SectionDivider";
 import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
 import ExperienceEducation from "./components/sections/ExperienceEducation";
-import Services from "./components/sections/Service";
-import Portfolio from "./components/sections/Porto";
-import Sertifikat from "./components/sections/Sertifikat";
-import Contact from "./components/Contact";
+import FeaturedProjects from "./components/sections/FeaturedProjects";
+import ContactCTA from "./components/sections/ContactCTA";
+import DotNavigation from "./components/navigation/DotNavigation";
 import Footer from "./components/common/Footer";
 
 // Halaman project detail dan 404 (dimuat terpisah agar halaman utama lebih ringan)
@@ -28,34 +27,33 @@ function HomePage() {
   const location = useLocation();
 
   useEffect(() => {
-    const target =
-      location.state?.scrollTo || location.hash.replace(/^#/, "");
+    const target = location.state?.scrollTo;
 
-    if (!target) {
-      window.scrollTo({ top: 0, behavior: "auto" });
-      return;
+    if (target) {
+      const timer = window.setTimeout(() => scrollToSection(target), 100);
+      return () => window.clearTimeout(timer);
     }
 
-    const timer = window.setTimeout(() => scrollToSection(target), 100);
-    return () => window.clearTimeout(timer);
+    // Hash scrolling is handled by the Navbar so direct links like /#about
+    // still work without this effect competing with it.
+    if (!location.hash) {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
   }, [location.key, location.hash, location.state, location.pathname]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 transition-colors duration-500">
       <Navbar />
+      <DotNavigation />
       <Hero />
       <SectionDivider />
       <About />
       <SectionDivider />
       <ExperienceEducation />
       <SectionDivider />
-      <Services />
+      <FeaturedProjects />
       <SectionDivider />
-      <Portfolio />
-      <SectionDivider />
-      <Sertifikat />
-      <SectionDivider />
-      <Contact />
+      <ContactCTA />
       <SectionDivider />
       <Footer />
     </div>

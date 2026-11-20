@@ -18,6 +18,13 @@
     "languageSwitcher": "Pilih bahasa",
     "mainNavigation": "Navigasi utama"
   },
+  "dotNav": {
+    "label": "Navigasi bagian",
+    "home": "Beranda",
+    "about": "Tentang",
+    "experience": "Pengalaman",
+    "projects": "Proyek"
+  },
   "hero": {
     "badge": "Lulusan Baru · Terbuka untuk penuh waktu",
     "titlePrefix": "Hai, saya",
@@ -72,7 +79,8 @@
     "viewDetails": "Lihat detail",
     "liveDemo": "Demo langsung",
     "github": "GitHub",
-    "private": "Privat"
+    "private": "Privat",
+    "viewAll": "Lihat semua proyek"
   },
   "certificates": {
     "heading": "Sertifikat",
@@ -82,6 +90,7 @@
   "contact": {
     "heading": "Hubungi Saya",
     "description": "Saat ini saya terbuka untuk peluang backend atau full-stack penuh waktu. Kirimkan pesan dan saya akan membalas secepat mungkin.",
+    "ctaDescription": "Saat ini saya terbuka untuk peluang backend atau full-stack penuh waktu.",
     "links": {
       "emailMe": "Email saya",
       "linkedin": "LinkedIn",
