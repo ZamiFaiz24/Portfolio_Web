@@ -47,18 +47,15 @@ type AboutProps = React.HTMLAttributes<HTMLElement>;
 type ActiveTab = "profile" | "skills";
 
 const skillsData = [
-  { name: "Laravel", icon: <FaLaravel className="text-red-500" /> },
-  { name: "PHP", icon: <FaPhp className="text-indigo-500" /> },
-  { name: "MySQL", icon: <SiMysql className="text-blue-600" /> },
-  {
-    name: "REST API",
-    icon: <FaCode className="text-gray-600 dark:text-gray-400" />,
-  },
-  { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
-  { name: "React", icon: <FaReact className="text-cyan-400" /> },
-  { name: "Vue.js", icon: <FaVuejs className="text-green-500" /> },
-  { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
-  { name: "Git", icon: <FaGitAlt className="text-red-600" /> },
+  { name: "Laravel", icon: <FaLaravel /> },
+  { name: "PHP", icon: <FaPhp /> },
+  { name: "MySQL", icon: <SiMysql /> },
+  { name: "REST API", icon: <FaCode /> },
+  { name: "JavaScript", icon: <FaJs /> },
+  { name: "React", icon: <FaReact /> },
+  { name: "Vue.js", icon: <FaVuejs /> },
+  { name: "Postman", icon: <SiPostman /> },
+  { name: "Git", icon: <FaGitAlt /> },
 ];
 
 export default function About(props: AboutProps) {
@@ -68,33 +65,33 @@ export default function About(props: AboutProps) {
   return (
     <section
       id="about"
-      className="scroll-mt-16 py-16 bg-gradient-to-br from-blue-100 via-blue-50 to-white dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 transition-colors duration-500"
+      className="scroll-mt-16 py-16 bg-page transition-colors duration-500"
       {...props}
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">
-        <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border border-blue-100 dark:border-gray-700 shadow-xl rounded-2xl p-6 flex flex-col items-center text-center md:col-span-1">
+        <div className="bg-surface border border-ink/10 shadow-sm rounded-2xl p-6 flex flex-col items-center text-center md:col-span-1">
           <div className="relative group mb-4">
-            <div className="p-1 bg-gradient-to-tr from-blue-500 to-cyan-500 rounded-xl">
+            <div className="p-1 bg-accent rounded-xl">
               <img
                 src="/images/Profile2.png"
                 alt="Faiz Zamzami"
-                className="w-44 h-44 object-cover rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-105 object-[0_20%]"
+                className="w-44 h-44 object-cover rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-105 object-[0_20%]"
               />
             </div>
           </div>
 
-          <h3 className="text-2xl font-extrabold text-blue-700 dark:text-cyan-400">
+          <h3 className="text-2xl font-extrabold text-accent">
             {t("hero.name")}
           </h3>
-          <p className="text-gray-600 dark:text-gray-400 text-sm">
+          <p className="text-ink/70 text-sm">
             {t("about.role")}
           </p>
-          <span className="mt-2 mb-4 inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+          <span className="mt-2 mb-4 inline-flex items-center gap-1.5 rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
             {t("about.availability")}
           </span>
 
-          <div className="mt-2 space-y-2 text-sm text-gray-700 dark:text-gray-300 w-full text-left">
+          <div className="mt-2 space-y-2 text-sm text-ink/80 w-full text-left">
             <InfoItem icon={<FaUser />} label={t("about.info.name")} value={t("hero.name")} />
             <InfoItem
               icon={<FaCode />}
@@ -119,14 +116,14 @@ export default function About(props: AboutProps) {
             href="/files/FAIZ_ZAMZAMI_Full_New.pdf"
             download="Faiz_Zamzami_CV.pdf"
             aria-label={t("about.downloadCvAria")}
-            className="mt-6 inline-flex items-center gap-2 px-6 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 active:scale-95"
+            className="mt-6 inline-flex items-center gap-2 px-6 py-2 rounded-lg bg-accent text-page hover:bg-accent/90 font-semibold shadow-sm hover:-translate-y-0.5 transition-all duration-300 active:scale-95"
           >
             <FaDownload className="text-lg" /> {t("about.downloadCv")}
           </a>
         </div>
 
-        <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border border-blue-100 dark:border-gray-700 shadow-xl rounded-2xl p-6 sm:p-8 md:col-span-2">
-          <h2 className="text-3xl font-extrabold text-blue-700 dark:text-cyan-400 border-b-4 border-blue-400 dark:border-cyan-500 inline-block pb-1 mb-6">
+        <div className="bg-surface border border-ink/10 shadow-sm rounded-2xl p-6 sm:p-8 md:col-span-2">
+          <h2 className="text-3xl font-extrabold text-accent border-b-4 border-accent inline-block pb-1 mb-6">
             {t("about.heading")}
           </h2>
 
@@ -157,7 +154,7 @@ export default function About(props: AboutProps) {
                     variants={listContainerVariant}
                     initial="hidden"
                     animate="visible"
-                    className="max-w-prose space-y-5 text-base leading-7 text-gray-700 dark:text-gray-300"
+                    className="max-w-prose space-y-5 text-base leading-7 text-ink/80"
                   >
                     <motion.p variants={listItemVariant}>
                       {t("about.paragraphs.p1")}
@@ -182,7 +179,7 @@ export default function About(props: AboutProps) {
                 >
                   <motion.p
                     variants={listItemVariant}
-                    className="mb-6 max-w-prose text-base leading-7 text-gray-700 dark:text-gray-300"
+                    className="mb-6 max-w-prose text-base leading-7 text-ink/80"
                   >
                     {t("about.skillsIntro")}
                   </motion.p>
@@ -197,12 +194,12 @@ export default function About(props: AboutProps) {
                       <motion.div
                         key={skill.name}
                         variants={listItemVariant}
-                        className="flex items-center p-3 text-sm bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group"
+                        className="flex items-center p-3 text-sm bg-surface rounded-lg border border-ink/10 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group"
                       >
-                        <span className="text-2xl mr-3 group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-2xl mr-3 text-ink/70 group-hover:scale-110 transition-transform duration-300">
                           {skill.icon}
                         </span>
-                        <p className="font-semibold text-gray-800 dark:text-gray-200">
+                        <p className="font-semibold text-ink">
                           {skill.name}
                         </p>
                       </motion.div>
@@ -231,7 +228,7 @@ function InfoItem({
 }) {
   return (
     <div className="flex items-start gap-2 text-inherit text-base">
-      <span className="mt-0.5 text-blue-500 dark:text-cyan-500 text-lg">
+      <span className="mt-0.5 text-accent text-lg">
         {icon}
       </span>
       <span className="font-semibold shrink-0">{label}:</span>
@@ -239,7 +236,7 @@ function InfoItem({
         {href ? (
           <a
             href={href}
-            className="hover:text-blue-600 dark:hover:text-cyan-400 hover:underline underline-offset-2"
+            className="hover:text-accent hover:underline underline-offset-2"
           >
             {value}
           </a>
@@ -271,15 +268,15 @@ function TabButton({
       <span
         className={
           isActive
-            ? "text-blue-600 dark:text-cyan-400"
-            : "text-gray-500 hover:text-blue-600 dark:hover:text-cyan-400"
+            ? "text-accent"
+            : "text-ink/60 hover:text-accent"
         }
       >
         {label}
       </span>
       {isActive && (
         <motion.div
-          className="absolute bottom-0 left-0 right-0 h-1 bg-blue-600 dark:bg-cyan-400"
+          className="absolute bottom-0 left-0 right-0 h-1 bg-accent"
           layoutId="activeTabIndicator"
         />
       )}

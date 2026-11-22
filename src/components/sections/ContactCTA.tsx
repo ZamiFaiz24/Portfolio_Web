@@ -10,7 +10,7 @@ export default function ContactCTA() {
 
   return (
     <section id="contact" className="scroll-mt-16 w-full bg-page px-6 py-16">
-      <div className="mx-auto max-w-3xl rounded-2xl border border-ink/10 bg-surface p-8 text-center shadow-lg sm:p-10">
+      <div className="mx-auto max-w-3xl rounded-2xl border border-ink/10 bg-surface p-8 text-center shadow-sm sm:p-10">
         <h2 className="text-3xl font-extrabold text-accent">
           {t("contact.heading")}
         </h2>
@@ -21,7 +21,7 @@ export default function ContactCTA() {
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
             href={`mailto:${EMAIL}`}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 font-semibold text-white shadow-lg transition-colors hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 font-semibold text-page shadow-sm transition-colors hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 sm:w-auto"
           >
             <FaEnvelope /> {t("contact.links.emailMe")}
           </a>

@@ -24,13 +24,13 @@ export default function ExperienceEducation() {
   return (
     <section
       id="experience"
-      className="scroll-mt-16 w-full bg-gradient-to-br from-white via-blue-50 to-blue-100 py-16 px-6 transition-colors duration-500 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
+      className="scroll-mt-16 w-full bg-page py-16 px-6 transition-colors duration-500"
     >
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-extrabold text-blue-700 dark:text-cyan-400 border-b-4 border-blue-400 dark:border-cyan-500 inline-block w-fit">
+        <h2 className="text-3xl font-extrabold text-accent border-b-4 border-accent inline-block w-fit">
           {t("experience.heading")}
         </h2>
-        <p className="mt-4 text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+        <p className="mt-4 text-ink/70 text-lg max-w-2xl mx-auto">
           {t("experience.subtitle")}
         </p>
       </div>
@@ -41,25 +41,25 @@ export default function ExperienceEducation() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.45, ease: "easeOut" }}
-          className="flex h-full flex-col rounded-2xl border border-blue-100 bg-white p-7 shadow-lg transition-shadow duration-300 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+          className="flex h-full flex-col rounded-2xl border border-ink/10 bg-surface p-7 shadow-sm"
         >
           <div className="mb-5 flex items-start justify-between gap-4">
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-2xl text-blue-600 dark:bg-gray-700 dark:text-cyan-400">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-2xl text-accent">
               <FaBriefcase />
             </span>
-            <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700 dark:bg-cyan-900/40 dark:text-cyan-300">
+            <span className="rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
               {t("experience.internshipBadge")}
             </span>
           </div>
 
-          <h3 className="text-xl font-bold text-gray-800 dark:text-white">
+          <h3 className="text-xl font-bold text-ink">
             {t("experience.internshipTitle")}
           </h3>
-          <p className="mt-1 font-semibold text-blue-700 dark:text-cyan-400">
+          <p className="mt-1 font-semibold text-accent">
             {t("experience.internshipCompany")}
           </p>
 
-          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
+          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-ink/60">
             <span className="inline-flex items-center gap-2">
               <FaCalendarAlt className="text-xs" /> {t(
                 "experience.internshipPeriod"
@@ -72,10 +72,10 @@ export default function ExperienceEducation() {
             </span>
           </div>
 
-          <ul className="mt-5 flex-1 space-y-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+          <ul className="mt-5 flex-1 space-y-2 text-sm leading-relaxed text-ink/80">
             {experiencePoints.map((point) => (
               <li key={point} className="flex items-start gap-2.5">
-                <FaCheckCircle className="mt-0.5 flex-shrink-0 text-cyan-500" />
+                <FaCheckCircle className="mt-0.5 flex-shrink-0 text-accent" />
                 <span>{point}</span>
               </li>
             ))}
@@ -85,7 +85,7 @@ export default function ExperienceEducation() {
             {["Laravel", "MySQL", "REST API"].map((tech) => (
               <span
                 key={tech}
-                className="rounded-full bg-blue-100 px-2.5 py-1 text-xs font-medium text-blue-800 dark:bg-gray-700 dark:text-cyan-300"
+                className="rounded-full bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent"
               >
                 {tech}
               </span>
@@ -98,28 +98,28 @@ export default function ExperienceEducation() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.45, ease: "easeOut", delay: 0.1 }}
-          className="flex h-full flex-col rounded-2xl border border-blue-100 bg-white p-7 shadow-lg transition-shadow duration-300 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+          className="flex h-full flex-col rounded-2xl border border-ink/10 bg-surface p-7 shadow-sm"
         >
           <div className="mb-5 flex items-start justify-between gap-4">
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-2xl text-blue-600 dark:bg-gray-700 dark:text-cyan-400">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-2xl text-accent">
               <FaGraduationCap />
             </span>
-            <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
+            <span className="rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
               {t("experience.educationBadge")}
             </span>
           </div>
 
-          <h3 className="text-xl font-bold text-gray-800 dark:text-white">
+          <h3 className="text-xl font-bold text-ink">
             {t("experience.educationDegree")}
           </h3>
-          <p className="mt-1 font-semibold text-blue-700 dark:text-cyan-400">
+          <p className="mt-1 font-semibold text-accent">
             {t("experience.educationUniversity")}
           </p>
-          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+          <p className="mt-1 text-sm text-ink/60">
             {t("experience.educationFaculty")}
           </p>
 
-          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
+          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-ink/60">
             <span className="inline-flex items-center gap-2">
               <FaCalendarAlt className="text-xs" /> {t(
                 "experience.educationPeriod"
@@ -132,10 +132,10 @@ export default function ExperienceEducation() {
             </span>
           </div>
 
-          <ul className="mt-5 flex-1 space-y-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+          <ul className="mt-5 flex-1 space-y-2 text-sm leading-relaxed text-ink/80">
             {educationPoints.map((point) => (
               <li key={point} className="flex items-start gap-2.5">
-                <FaCheckCircle className="mt-0.5 flex-shrink-0 text-cyan-500" />
+                <FaCheckCircle className="mt-0.5 flex-shrink-0 text-accent" />
                 <span>{point}</span>
               </li>
             ))}

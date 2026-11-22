@@ -32,7 +32,7 @@ export default function FeaturedProjects() {
         <div className="mt-12 text-center">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2 rounded-lg border border-accent px-6 py-3 font-semibold text-accent transition-colors hover:bg-accent hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+            className="inline-flex items-center gap-2 rounded-lg border border-accent px-6 py-3 font-semibold text-accent transition-colors hover:bg-accent hover:text-page focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
           >
             {t("projects.viewAll")} <FaArrowRight className="text-sm" />
           </Link>

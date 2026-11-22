@@ -44,7 +44,7 @@ function HomePage() {
   }, [location.key, location.hash, location.state, location.pathname]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 transition-colors duration-500">
+    <div className="min-h-screen bg-page transition-colors duration-500">
       <Navbar />
       <DotNavigation />
       <Hero />
