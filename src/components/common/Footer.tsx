@@ -2,6 +2,7 @@
 
 import { Link } from "react-router-dom";
 import { useTranslation } from "@/locales";
+import { CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL } from "@/data/contact";
 import { FaGithub, FaLinkedin, FaEnvelope, FaArrowUp } from "react-icons/fa";
 
 const Footer = () => {
@@ -13,25 +14,24 @@ const Footer = () => {
   const navLinks = [
     { to: "/#about", labelKey: "footer.nav.about" },
     { to: "/#experience", labelKey: "footer.nav.experience" },
-    { to: "/#service", labelKey: "footer.nav.services" },
-    { to: "/#projects", labelKey: "footer.nav.projects" },
-    { to: "/#certificates", labelKey: "footer.nav.certificates" },
-    { to: "/#contact", labelKey: "footer.nav.contact" },
+    { to: "/projects", labelKey: "footer.nav.projects" },
+    { to: "/certificates", labelKey: "footer.nav.certificates" },
+    { to: "/contact", labelKey: "footer.nav.contact" },
   ];
 
   const socialLinks = [
     {
-      href: "https://github.com/ZamiFaiz24",
+      href: GITHUB_URL,
       labelKey: "footer.social.github",
       icon: <FaGithub />,
     },
     {
-      href: "https://www.linkedin.com/in/faiz-zamzami-1189492ab/",
+      href: LINKEDIN_URL,
       labelKey: "footer.social.linkedin",
       icon: <FaLinkedin />,
     },
     {
-      href: "mailto:faizzamzami10p@gmail.com",
+      href: `mailto:${CONTACT_EMAIL}`,
       labelKey: "footer.social.email",
       icon: <FaEnvelope />,
     },

@@ -12,6 +12,7 @@
   --color-surface: var(--app-surface);
   --color-ink: var(--app-text);
   --color-accent: var(--app-accent);
+  --color-danger: var(--app-danger);
 }
 
 :root {
@@ -20,6 +21,7 @@
   --app-surface: #ffffff;
   --app-text: #0f172a;
   --app-accent: #0ea5e9;
+  --app-danger: #dc2626;
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -38,6 +40,7 @@
     --app-surface: #1e293b;
     --app-text: #e2e8f0;
     --app-accent: #0ea5e9;
+    --app-danger: #f87171;
   }
 }
 

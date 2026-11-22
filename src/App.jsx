@@ -21,6 +21,7 @@ import Footer from "./components/common/Footer";
 const ProjectDetails = lazy(() => import("./pages/ProjectDetails"));
 const Projects = lazy(() => import("./pages/Projects"));
 const Certificates = lazy(() => import("./pages/Certificates"));
+const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 import { scrollToSection } from "./utils/scrollToSection";
@@ -67,7 +68,7 @@ function App() {
     <Router>
       <Suspense
         fallback={
-          <div className="min-h-screen flex items-center justify-center bg-white text-gray-600 dark:bg-gray-950 dark:text-gray-300">
+          <div className="min-h-screen flex items-center justify-center bg-page text-ink/70">
             Loading...
           </div>
         }
@@ -77,6 +78,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetails />} />
           <Route path="/certificates" element={<Certificates />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

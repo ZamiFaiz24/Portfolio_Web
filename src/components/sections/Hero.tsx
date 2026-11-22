@@ -1,4 +1,5 @@
 import { FaArrowDown, FaDownload } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 import { scrollToSection } from "@/utils/scrollToSection";
 import { useTranslation } from "@/locales";
@@ -66,16 +67,12 @@ export default function Hero() {
             {t("hero.buttons.viewProjects")}
           </button>
 
-          <a
-            href="#contact"
-            onClick={(event) => {
-              event.preventDefault();
-              scrollToSection("contact");
-            }}
+          <Link
+            to="/contact"
             className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-gray-700 dark:text-gray-200 hover:text-blue-700 dark:hover:text-cyan-400 hover:bg-white/70 dark:hover:bg-gray-800/70 transition-all duration-300"
           >
             {t("hero.buttons.contactMe")}
-          </a>
+          </Link>
         </div>
       </div>
 

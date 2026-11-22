@@ -21,7 +21,6 @@
   },
   "dotNav": {
     "label": "Section navigation",
-    "home": "Home",
     "about": "About",
     "experience": "Experience",
     "projects": "Projects"
@@ -128,6 +127,7 @@
     "heading": "Contact Me",
     "description": "I am currently open to full-time backend or full-stack opportunities. Send me a message and I will get back to you as soon as possible.",
     "ctaDescription": "I am currently open to full-time backend or full-stack opportunities.",
+    "ctaHeading": "Let's work together",
     "links": {
       "emailMe": "Email me",
       "linkedin": "LinkedIn",
@@ -152,6 +152,7 @@
       "errorTitle": "Oops!",
       "successMessage": "Message sent successfully!",
       "errorMessage": "Failed to send message. Please try again or email me directly.",
+      "configMessage": "The contact form is not configured yet. Please email me directly.",
       "close": "Close"
     }
   },

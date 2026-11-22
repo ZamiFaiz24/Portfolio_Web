@@ -21,7 +21,6 @@
   },
   "dotNav": {
     "label": "Navigasi bagian",
-    "home": "Beranda",
     "about": "Tentang",
     "experience": "Pengalaman",
     "projects": "Proyek"
@@ -128,6 +127,7 @@
     "heading": "Hubungi Saya",
     "description": "Saat ini saya terbuka untuk peluang backend atau full-stack penuh waktu. Kirimkan pesan dan saya akan membalas secepat mungkin.",
     "ctaDescription": "Saat ini saya terbuka untuk peluang backend atau full-stack penuh waktu.",
+    "ctaHeading": "Mari bekerja sama",
     "links": {
       "emailMe": "Email saya",
       "linkedin": "LinkedIn",
@@ -152,6 +152,7 @@
       "errorTitle": "Ups!",
       "successMessage": "Pesan berhasil dikirim!",
       "errorMessage": "Gagal mengirim pesan. Silakan coba lagi atau email saya langsung.",
+      "configMessage": "Form kontak belum dikonfigurasi. Silakan email saya langsung.",
       "close": "Tutup"
     }
   },
