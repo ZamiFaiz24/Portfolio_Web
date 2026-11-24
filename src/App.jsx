@@ -13,7 +13,6 @@ import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
 import ExperienceEducation from "./components/sections/ExperienceEducation";
 import FeaturedProjects from "./components/sections/FeaturedProjects";
-import ContactCTA from "./components/sections/ContactCTA";
 import DotNavigation from "./components/navigation/DotNavigation";
 import Footer from "./components/common/Footer";
 
@@ -55,8 +54,6 @@ function HomePage() {
       <ExperienceEducation />
       <SectionDivider />
       <FeaturedProjects />
-      <SectionDivider />
-      <ContactCTA />
       <SectionDivider />
       <Footer />
     </div>
