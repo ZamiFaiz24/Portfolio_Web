@@ -27,15 +27,18 @@
   },
   "hero": {
     "badge": "Fresh Graduate · Open to full-time",
-    "titlePrefix": "Hi, I am",
+    "titlePrefix": "Hi, I'm",
     "name": "Faiz Zamzami",
-    "subtitle": "Junior Full Stack Developer",
-    "subtitleAltLaravel": "Laravel & React Developer",
-    "subtitleAltBackend": "Backend-Focused Full Stack",
-    "description": "I build end-to-end web applications with a backend focus — Laravel REST APIs, MySQL, and React/TypeScript frontends.",
-    "availabilityNote": "Open to backend or full-stack roles.",
+    "role": "Backend-focused Full Stack Developer",
+    "keywords": {
+      "laravel": "Laravel Framework",
+      "restApi": "REST API",
+      "react": "React + TypeScript",
+      "mysql": "MySQL"
+    },
+    "description": "I build reliable end-to-end web apps with a backend focus.",
+    "proof": "Backend Intern @ BPS Kebumen · Thesis: SapiDoc · Capstone: STECI IoT",
     "buttons": {
-      "downloadCv": "Download CV",
       "viewProjects": "View Projects",
       "contactMe": "Contact Me",
       "scrollDown": "Scroll Down"
@@ -63,7 +66,21 @@
       "p2": "My curiosity drives me to constantly experiment with new technologies, from designing robust APIs and managing data pipelines to building responsive interfaces with JavaScript and TypeScript.",
       "p3": "I see the backend as the core engine of an application. I am now looking for a full-time junior full-stack role with a backend focus where I can keep learning, build impactful systems, and grow with a team."
     },
-    "skillsIntro": "I work across backend and frontend technologies to build maintainable end-to-end web applications and reliable backend services."
+    "skillsIntro": "I work across backend and frontend technologies to build maintainable end-to-end web applications and reliable backend services.",
+    "skillGroups": {
+      "core": {
+        "label": "Core",
+        "description": "Used regularly across projects."
+      },
+      "project": {
+        "label": "Project experience",
+        "description": "Used in academic or personal projects."
+      },
+      "exposure": {
+        "label": "Exposure",
+        "description": "Tried through basic Git-based deployments and small experiments; still developing."
+      }
+    }
   },
   "experience": {
     "heading": "Experience & Education",
@@ -73,6 +90,7 @@
     "internshipCompany": "BPS Kabupaten Kebumen",
     "internshipPeriod": "Sep 2025 – Jan 2026",
     "internshipLocation": "Kebumen, Central Java",
+    "internshipProjectLink": "View internship project",
     "points": {
       "p1": "Built a Laravel REST API for SiLawet.",
       "p2": "Integrated BPS Web API data into MySQL.",
@@ -83,7 +101,9 @@
     "educationUniversity": "Universitas Putra Bangsa Kebumen",
     "educationFaculty": "Fakultas Sains dan Teknologi",
     "educationPeriod": "2022 – 2026",
-    "educationLocation": "Kebumen, Central Java"
+    "educationLocation": "Kebumen, Central Java",
+    "thesisProjectLink": "View thesis project",
+    "capstoneProjectLink": "View capstone project"
   },
   "education": {
     "points": {
@@ -194,6 +214,8 @@
     "notFoundTitle": "Project Not Found",
     "notFoundDescription": "The project you are looking for does not exist.",
     "backToHome": "Back to Home",
+    "statusLive": "Live demo",
+    "statusCompleted": "Completed",
     "confidential": "Confidential",
     "private": "Private"
   }

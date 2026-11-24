@@ -10,8 +10,16 @@ import {
   FaReact,
   FaVuejs,
   FaGitAlt,
+  FaCloudUploadAlt,
+  FaServer,
 } from "react-icons/fa";
-import { SiMysql, SiPostman } from "react-icons/si";
+import {
+  SiMysql,
+  SiPostgresql,
+  SiPostman,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
 import React, { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useTranslation } from "@/locales";
@@ -46,16 +54,51 @@ const listItemVariant: Variants = {
 type AboutProps = React.HTMLAttributes<HTMLElement>;
 type ActiveTab = "profile" | "skills";
 
-const skillsData = [
-  { name: "Laravel", icon: <FaLaravel /> },
-  { name: "PHP", icon: <FaPhp /> },
-  { name: "MySQL", icon: <SiMysql /> },
-  { name: "REST API", icon: <FaCode /> },
-  { name: "JavaScript", icon: <FaJs /> },
-  { name: "React", icon: <FaReact /> },
-  { name: "Vue.js", icon: <FaVuejs /> },
-  { name: "Postman", icon: <SiPostman /> },
-  { name: "Git", icon: <FaGitAlt /> },
+type Skill = {
+  name: string;
+  icon: React.ReactNode;
+};
+
+type SkillGroup = {
+  labelKey: string;
+  descriptionKey: string;
+  skills: Skill[];
+};
+
+const skillGroups: SkillGroup[] = [
+  {
+    labelKey: "about.skillGroups.core.label",
+    descriptionKey: "about.skillGroups.core.description",
+    skills: [
+      { name: "Laravel", icon: <FaLaravel /> },
+      { name: "PHP", icon: <FaPhp /> },
+      { name: "REST API", icon: <FaCode /> },
+      { name: "MySQL", icon: <SiMysql /> },
+      { name: "React", icon: <FaReact /> },
+      { name: "TypeScript", icon: <SiTypescript /> },
+      { name: "JavaScript", icon: <FaJs /> },
+      { name: "Git", icon: <FaGitAlt /> },
+    ],
+  },
+  {
+    labelKey: "about.skillGroups.project.label",
+    descriptionKey: "about.skillGroups.project.description",
+    skills: [
+      { name: "Vue.js", icon: <FaVuejs /> },
+      { name: "PostgreSQL", icon: <SiPostgresql /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+      { name: "Postman", icon: <SiPostman /> },
+    ],
+  },
+  {
+    labelKey: "about.skillGroups.exposure.label",
+    descriptionKey: "about.skillGroups.exposure.description",
+    skills: [
+      { name: "Netlify", icon: <FaCloudUploadAlt /> },
+      { name: "EthioDeploy", icon: <FaCloudUploadAlt /> },
+      { name: "VPS basics", icon: <FaServer /> },
+    ],
+  },
 ];
 
 export default function About(props: AboutProps) {
@@ -188,20 +231,40 @@ export default function About(props: AboutProps) {
                     variants={listContainerVariant}
                     initial="hidden"
                     animate="visible"
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+                    className="space-y-8"
                   >
-                    {skillsData.map((skill) => (
+                    {skillGroups.map((group) => (
                       <motion.div
-                        key={skill.name}
-                        variants={listItemVariant}
-                        className="flex items-center p-3 text-sm bg-surface rounded-lg border border-ink/10 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group"
+                        key={group.labelKey}
+                        variants={listContainerVariant}
+                        initial="hidden"
+                        animate="visible"
                       >
-                        <span className="text-2xl mr-3 text-ink/70 group-hover:scale-110 transition-transform duration-300">
-                          {skill.icon}
-                        </span>
-                        <p className="font-semibold text-ink">
-                          {skill.name}
-                        </p>
+                        <div className="mb-3">
+                          <h3 className="text-sm font-bold uppercase tracking-wide text-accent">
+                            {t(group.labelKey)}
+                          </h3>
+                          <p className="mt-1 text-sm text-ink/60">
+                            {t(group.descriptionKey)}
+                          </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                          {group.skills.map((skill) => (
+                            <motion.div
+                              key={skill.name}
+                              variants={listItemVariant}
+                              className="flex items-center p-3 text-sm bg-surface rounded-lg border border-ink/10 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group"
+                            >
+                              <span className="text-2xl mr-3 text-ink/70 group-hover:scale-110 transition-transform duration-300">
+                                {skill.icon}
+                              </span>
+                              <p className="font-semibold text-ink">
+                                {skill.name}
+                              </p>
+                            </motion.div>
+                          ))}
+                        </div>
                       </motion.div>
                     ))}
                   </motion.div>

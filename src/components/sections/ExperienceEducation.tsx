@@ -1,4 +1,5 @@
 import {
+  FaArrowRight,
   FaBriefcase,
   FaCalendarAlt,
   FaCheckCircle,
@@ -6,6 +7,7 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { useTranslation } from "@/locales";
 
 const experiencePointsKeys = ["p1", "p2", "p3"] as const;
@@ -91,6 +93,16 @@ export default function ExperienceEducation() {
               </span>
             ))}
           </div>
+
+          <div className="mt-5 border-t border-ink/10 pt-4">
+            <Link
+              to="/projects/bps-data-management"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+            >
+              {t("experience.internshipProjectLink")}{" "}
+              <FaArrowRight className="text-xs" aria-hidden="true" />
+            </Link>
+          </div>
         </motion.article>
 
         <motion.article
@@ -140,6 +152,36 @@ export default function ExperienceEducation() {
               </li>
             ))}
           </ul>
+
+          <div className="mt-5 flex flex-wrap gap-2">
+            {["Laravel", "React", "TypeScript", "Vue", "MySQL", "REST API"].map(
+              (tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent"
+                >
+                  {tech}
+                </span>
+              )
+            )}
+          </div>
+
+          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 border-t border-ink/10 pt-4">
+            <Link
+              to="/projects/sapidoc-expert-system"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+            >
+              {t("experience.thesisProjectLink")}{" "}
+              <FaArrowRight className="text-xs" aria-hidden="true" />
+            </Link>
+            <Link
+              to="/projects/iot-dashboard"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+            >
+              {t("experience.capstoneProjectLink")}{" "}
+              <FaArrowRight className="text-xs" aria-hidden="true" />
+            </Link>
+          </div>
         </motion.article>
       </div>
     </section>

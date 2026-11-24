@@ -29,13 +29,16 @@
     "badge": "Lulusan Baru · Terbuka untuk penuh waktu",
     "titlePrefix": "Hai, saya",
     "name": "Faiz Zamzami",
-    "subtitle": "Pengembang Full Stack Junior",
-    "subtitleAltLaravel": "Pengembang Laravel & React",
-    "subtitleAltBackend": "Full Stack Berfokus Backend",
-    "description": "Saya membangun aplikasi web end-to-end dengan fokus backend — REST API Laravel, MySQL, dan frontend React/TypeScript.",
-    "availabilityNote": "Terbuka untuk peran backend atau full-stack.",
+    "role": "Full Stack Developer Berfokus Backend",
+    "keywords": {
+      "laravel": "Laravel Framework",
+      "restApi": "REST API",
+      "react": "React + TypeScript",
+      "mysql": "MySQL"
+    },
+    "description": "Saya membangun aplikasi web end-to-end yang andal dengan fokus backend.",
+    "proof": "Magang Backend @ BPS Kebumen · Skripsi: SapiDoc · Capstone: STECI IoT",
     "buttons": {
-      "downloadCv": "Unduh CV",
       "viewProjects": "Lihat Proyek",
       "contactMe": "Hubungi Saya",
       "scrollDown": "Gulir ke Bawah"
@@ -63,7 +66,21 @@
       "p2": "Rasa ingin tahu saya mendorong saya untuk terus bereksperimen dengan teknologi baru, mulai dari merancang API yang andal dan mengelola alur data hingga membangun antarmuka responsif dengan JavaScript dan TypeScript.",
       "p3": "Saya melihat backend sebagai mesin inti sebuah aplikasi. Saat ini saya mencari peran full-stack junior penuh waktu dengan fokus backend tempat saya dapat terus belajar, membangun sistem yang berdampak, dan berkembang bersama tim."
     },
-    "skillsIntro": "Saya bekerja dengan teknologi backend dan frontend untuk membangun aplikasi web end-to-end yang mudah dipelihara serta layanan backend yang andal."
+    "skillsIntro": "Saya bekerja dengan teknologi backend dan frontend untuk membangun aplikasi web end-to-end yang mudah dipelihara serta layanan backend yang andal.",
+    "skillGroups": {
+      "core": {
+        "label": "Inti",
+        "description": "Sering dipakai di berbagai proyek."
+      },
+      "project": {
+        "label": "Pengalaman proyek",
+        "description": "Dipakai di proyek akademik atau pribadi."
+      },
+      "exposure": {
+        "label": "Eksplorasi",
+        "description": "Pernah dicoba lewat deployment dasar berbasis Git dan eksperimen kecil; masih terus dipelajari."
+      }
+    }
   },
   "experience": {
     "heading": "Pengalaman & Pendidikan",
@@ -73,6 +90,7 @@
     "internshipCompany": "BPS Kabupaten Kebumen",
     "internshipPeriod": "Sep 2025 – Jan 2026",
     "internshipLocation": "Kebumen, Jawa Tengah",
+    "internshipProjectLink": "Lihat proyek magang",
     "points": {
       "p1": "Membangun REST API Laravel untuk SiLawet.",
       "p2": "Mengintegrasikan data Web API BPS ke MySQL.",
@@ -83,7 +101,9 @@
     "educationUniversity": "Universitas Putra Bangsa Kebumen",
     "educationFaculty": "Fakultas Sains dan Teknologi",
     "educationPeriod": "2022 – 2026",
-    "educationLocation": "Kebumen, Jawa Tengah"
+    "educationLocation": "Kebumen, Jawa Tengah",
+    "thesisProjectLink": "Lihat proyek skripsi",
+    "capstoneProjectLink": "Lihat proyek capstone"
   },
   "education": {
     "points": {
@@ -194,6 +214,8 @@
     "notFoundTitle": "Proyek Tidak Ditemukan",
     "notFoundDescription": "Proyek yang Anda cari tidak ada.",
     "backToHome": "Kembali ke Beranda",
+    "statusLive": "Demo aktif",
+    "statusCompleted": "Selesai",
     "confidential": "Rahasia",
     "private": "Privat"
   }

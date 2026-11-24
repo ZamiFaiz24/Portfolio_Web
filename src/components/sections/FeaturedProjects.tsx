@@ -6,7 +6,7 @@ import ProjectCard from "@/components/sections/ProjectCard";
 
 const featuredProjects = projects
   .filter((project) => project.featured)
-  .slice(0, 3);
+  .slice(0, 2);
 
 export default function FeaturedProjects() {
   const { t } = useTranslation();
