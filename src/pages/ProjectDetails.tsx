@@ -11,14 +11,14 @@ import { useParams, Link } from "react-router-dom";
 import PageLayout from "../components/PageLayout";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import { projects } from "../data/projects";
+import { getProjectContent, projects } from "../data/projects";
 import { useTranslation } from "@/locales";
 
 const DEFAULT_TITLE = "Faiz Zamzami - Junior Full Stack Developer Portfolio";
 
 export default function ProjectDetails() {
   const { id } = useParams();
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const project = projects.find((item) => item.id === id);
 
   // Scroll to the top when a project detail page is opened.
@@ -28,28 +28,28 @@ export default function ProjectDetails() {
 
   useEffect(() => {
     document.title = project
-      ? `${project.title} | Faiz Zamzami`
+      ? `${getProjectContent(project, locale).title} | Faiz Zamzami`
       : `${t("projectDetails.notFoundTitle")} | Faiz Zamzami`;
 
     return () => {
       document.title = DEFAULT_TITLE;
     };
-  }, [project, t]);
+  }, [project, locale, t]);
 
   if (!project) {
     return (
       <PageLayout>
-        <div className="min-h-[70vh] flex items-center justify-center text-center px-6 pt-24">
+        <div className="flex min-h-[70vh] items-center justify-center px-6 pt-24 text-center">
           <div>
-            <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">
+            <h2 className="text-2xl font-bold text-ink">
               {t("projectDetails.notFoundTitle")}
             </h2>
-            <p className="text-gray-500 dark:text-gray-400 mt-2">
+            <p className="mt-2 text-ink/60">
               {t("projectDetails.notFoundDescription")}
             </p>
             <Link
               to="/"
-              className="mt-6 inline-block px-6 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+              className="mt-6 inline-block rounded-lg bg-accent px-6 py-2 font-semibold text-slate-950 transition-colors hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
             >
               {t("projectDetails.backToHome")}
             </Link>
@@ -59,70 +59,76 @@ export default function ProjectDetails() {
     );
   }
 
+  const content = getProjectContent(project, locale);
+
   return (
     <PageLayout>
-      <section className="w-full bg-gradient-to-br from-white via-blue-50 to-blue-100 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 pt-24 pb-16 px-6 transition-colors duration-500">
-        <div className="max-w-6xl mx-auto">
+      <section className="w-full bg-page px-6 pb-16 pt-24 transition-colors duration-500">
+        <div className="mx-auto max-w-6xl">
           <Link
             to="/projects"
-            className="flex items-center gap-2 mb-8 text-blue-600 dark:text-cyan-400 font-semibold hover:underline"
+            className="mb-8 flex items-center gap-2 font-semibold text-accent hover:text-accent/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
             aria-label={t("projectDetails.backToAllProjects")}
           >
             <FaArrowLeft />
             {t("projectDetails.backToAllProjects")}
           </Link>
 
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div className="rounded-2xl overflow-hidden shadow-2xl md:sticky md:top-24">
-              <Swiper
-                key={project.id}
-                modules={[Navigation, Pagination]}
-                navigation={project.screenshots.length > 1}
-                pagination={
-                  project.screenshots.length > 1 ? { clickable: true } : false
-                }
-                loop={project.screenshots.length > 1}
-                autoHeight={true}
-                className="project-swiper"
-              >
-                {project.screenshots.map((src, index) => (
-                  <SwiperSlide key={src}>
-                    <img
-                      src={src}
-                      alt={`${project.title} screenshot ${index + 1}`}
-                      loading={index === 0 ? "eager" : "lazy"}
-                      decoding="async"
-                      className="w-full h-auto object-contain bg-gray-100 dark:bg-gray-800"
-                    />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
-
-            <div>
-              <h1 className="text-3xl md:text-4xl font-extrabold text-blue-700 dark:text-cyan-400 mb-2">
-                {project.title}
+          <div className="grid items-start gap-8 md:grid-cols-2 md:gap-x-12 md:gap-y-6">
+            <div className="min-w-0 md:col-start-2 md:row-start-1">
+              <h1 className="mb-2 text-3xl font-extrabold text-accent md:text-4xl">
+                {content.title}
               </h1>
-              <p className="text-gray-500 dark:text-gray-400 text-sm mb-6">
-                {project.subinfo}
+              <p className="text-sm text-ink/60">
+                {content.subinfo}
                 {project.period ? ` · ${project.period}` : ""}
               </p>
+            </div>
 
-              <p className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-md dark:border dark:border-gray-700 p-6 rounded-xl shadow leading-relaxed whitespace-pre-line text-gray-700 dark:text-gray-300 mb-8">
-                {project.description.trim()}
+            <div className="min-w-0 md:col-start-1 md:row-span-2 md:row-start-1 md:sticky md:top-24">
+              <div className="w-full overflow-hidden rounded-2xl border border-ink/10 bg-surface shadow-xl">
+                <Swiper
+                  key={project.id}
+                  modules={[Navigation, Pagination]}
+                  navigation={project.screenshots.length > 1}
+                  pagination={
+                    project.screenshots.length > 1 ? { clickable: true } : false
+                  }
+                  loop={project.screenshots.length > 1}
+                  autoHeight={true}
+                  className="project-swiper w-full"
+                >
+                  {project.screenshots.map((src, index) => (
+                    <SwiperSlide key={src}>
+                      <img
+                        src={src}
+                        alt={`${content.title} screenshot ${index + 1}`}
+                        loading={index === 0 ? "eager" : "lazy"}
+                        decoding="async"
+                        className="h-auto w-full bg-ink/5 object-contain"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+            </div>
+
+            <div className="min-w-0 md:col-start-2 md:row-start-2">
+              <p className="mb-8 whitespace-pre-line rounded-xl border border-ink/10 bg-surface p-6 leading-relaxed text-ink/80 shadow-sm">
+                {content.description.trim()}
               </p>
 
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-blue-600 dark:text-cyan-500 mb-3">
-                  Key Features
+                <h3 className="mb-3 text-xl font-bold text-accent">
+                  {t("projectDetails.keyFeatures")}
                 </h3>
                 <ul className="space-y-2">
-                  {project.features.map((feature) => (
+                  {content.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-start gap-3 text-gray-700 dark:text-gray-300"
+                      className="flex items-start gap-3 text-ink/80"
                     >
-                      <FaCheckCircle className="text-cyan-500 mt-1 flex-shrink-0" />
+                      <FaCheckCircle className="mt-1 flex-shrink-0 text-accent" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -130,14 +136,14 @@ export default function ProjectDetails() {
               </div>
 
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-blue-600 dark:text-cyan-500 mb-3 flex items-center gap-2">
+                <h3 className="mb-3 flex items-center gap-2 text-xl font-bold text-accent">
                   <FaCogs /> {t("projectDetails.technologiesUsed")}
                 </h3>
-                <div className="flex gap-2 flex-wrap">
+                <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-blue-100 dark:bg-gray-700 text-blue-800 dark:text-cyan-300 font-medium rounded-full text-sm"
+                      className="rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-sm font-medium text-accent"
                     >
                       {tech}
                     </span>
@@ -145,10 +151,10 @@ export default function ProjectDetails() {
                 </div>
               </div>
 
-              {project.repoNote && (
-                <p className="mb-6 inline-flex items-center gap-2 rounded-lg bg-gray-100 px-4 py-2 text-sm text-gray-600 dark:bg-gray-800 dark:text-gray-300">
+              {content.repoNote && (
+                <p className="mb-6 inline-flex items-center gap-2 rounded-lg border border-ink/10 bg-ink/5 px-4 py-2 text-sm text-ink/70">
                   <FaLock className="flex-shrink-0" />
-                  {project.repoNote}
+                  {content.repoNote}
                 </p>
               )}
 
@@ -159,7 +165,7 @@ export default function ProjectDetails() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white text-sm hover:bg-black transition shadow-lg"
+                      className="inline-flex items-center gap-2 rounded-lg border border-ink/15 bg-surface px-4 py-2 text-sm font-semibold text-ink shadow-sm transition-colors hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
                     >
                       <FaGithub /> {t("projectDetails.viewOnGithub")}
                     </a>
@@ -169,7 +175,7 @@ export default function ProjectDetails() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 rounded-lg bg-green-600 text-white text-sm hover:bg-green-700 transition shadow-lg"
+                      className="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-slate-950 shadow-sm transition-colors hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
                     >
                       <FaExternalLinkAlt /> {t("projectDetails.liveDemo")}
                     </a>
@@ -206,7 +212,7 @@ export default function ProjectDetails() {
             opacity: 0.6;
           }
           .project-swiper .swiper-pagination-bullet-active {
-            background: #0ea5e9;
+            background: var(--app-accent);
             opacity: 1;
           }
         `}

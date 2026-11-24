@@ -6,7 +6,11 @@ import {
   FaGithub,
   FaLock,
 } from "react-icons/fa";
-import type { Project } from "@/data/projects";
+import {
+  getProjectContent,
+  projectStatusLabelKeys,
+  type Project,
+} from "@/data/projects";
 import { useTranslation } from "@/locales";
 
 type ProjectCardProps = {
@@ -18,8 +22,9 @@ export default function ProjectCard({
   project,
   className,
 }: ProjectCardProps) {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const shouldReduceMotion = useReducedMotion();
+  const content = getProjectContent(project, locale);
 
   return (
     <motion.article
@@ -28,12 +33,12 @@ export default function ProjectCard({
     >
       <Link
         to={`/projects/${project.id}`}
-        aria-label={`${t("projects.viewDetails")}: ${project.title}`}
+        aria-label={`${t("projects.viewDetails")}: ${content.title}`}
         className="relative block aspect-[3/2] overflow-hidden bg-ink/5"
       >
         <img
           src={project.img}
-          alt={project.title}
+          alt={content.title}
           loading="lazy"
           decoding="async"
           className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
@@ -43,7 +48,7 @@ export default function ProjectCard({
       <div className="flex flex-1 flex-col p-5">
         <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-            {project.category} · {project.subinfo.split(" · ")[0]}
+            {project.category} · {content.subinfo.split(" · ")[0]}
           </p>
           {project.period && (
             <span className="text-xs font-medium text-ink/60">
@@ -53,11 +58,11 @@ export default function ProjectCard({
         </div>
 
         <h3 className="mt-2 text-lg font-bold text-ink transition-colors group-hover:text-accent">
-          {project.title}
+          {content.title}
         </h3>
 
         <p className="mt-2 flex-1 text-sm leading-relaxed text-ink/70 line-clamp-2">
-          {project.desc}
+          {content.desc}
         </p>
 
         <div className="mt-4 flex flex-wrap gap-2">
@@ -102,13 +107,13 @@ export default function ProjectCard({
             </a>
           )}
 
-          {project.repoNote && (
+          {content.repoNote && (
             <span
-              title={project.repoNote}
+              title={content.repoNote}
               className="inline-flex items-center gap-1.5 text-sm font-medium text-ink/60"
             >
               <FaLock className="text-xs" />{" "}
-              {project.repoLabel ?? t("projects.private")}
+              {t(projectStatusLabelKeys[project.status ?? "private"])}
             </span>
           )}
         </div>
